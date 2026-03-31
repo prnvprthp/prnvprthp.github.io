@@ -1,10 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  // If the keys below are causing type errors in your version, we'll bypass them
+  // Ignore checks during build for maximum compatibility with static export
   typescript: {
     ignoreBuildErrors: true,
   },
