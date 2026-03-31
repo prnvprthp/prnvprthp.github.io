@@ -32,6 +32,8 @@ jobs:
         run: npm install
       - name: Build with Next.js
         run: npx next build
+      - name: Check for out directory
+        run: ls -R out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
