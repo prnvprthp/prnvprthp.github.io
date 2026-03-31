@@ -31,17 +31,18 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build with Next.js
-        run: npx next build
-      - name: Check build output
+        run: npm run build
+      - name: Verify Export
         run: |
           if [ -d "out" ]; then
             echo "SUCCESS: Found out directory."
-          elif [ -d ".next" ]; then
-            echo "ERROR: Found .next directory but no out folder. Is static export enabled?"
-            ls -R .next | head -n 20
+            ls -F out
           else
-            echo "ERROR: No build output found at all."
+            echo "ERROR: 'out' directory still not found. Listing all files for debug:"
             ls -F
+            echo "Checking for .next folder:"
+            ls -F .next || echo ".next not found either"
+            exit 1
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

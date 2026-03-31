@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure we skip checks on the server
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -12,4 +13,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
