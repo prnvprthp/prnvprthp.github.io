@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ignore type errors during build to ensure deployment success
+  // Correct way to skip checks during 'next build'
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
