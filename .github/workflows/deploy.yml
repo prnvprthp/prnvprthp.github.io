@@ -32,6 +32,17 @@ jobs:
         run: npm install
       - name: Build with Next.js
         run: npx next build
+      - name: Check build output
+        run: |
+          if [ -d "out" ]; then
+            echo "SUCCESS: Found out directory."
+          elif [ -d ".next" ]; then
+            echo "ERROR: Found .next directory but no out folder. Is static export enabled?"
+            ls -R .next | head -n 20
+          else
+            echo "ERROR: No build output found at all."
+            ls -F
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
