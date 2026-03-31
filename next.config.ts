@@ -5,10 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ignore lint and type errors during build to ensure deployment success
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Ignore type errors during build to ensure deployment success
   typescript: {
     ignoreBuildErrors: true,
   },
