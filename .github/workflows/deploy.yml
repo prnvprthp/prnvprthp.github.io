@@ -1,0 +1,38 @@
+name: Deploy Next.js site to Pages
+    2 on:
+    3   push:
+    4     branches: ["main"]
+    5   workflow_dispatch:
+    6 permissions:
+    7   contents: read
+    8   pages: write
+    9   id-token: write
+   10 concurrency:
+   11   group: "pages"
+   12   cancel-in-progress: false
+   13 jobs:
+   14   build:
+   15     runs-on: ubuntu-latest
+   16     steps:
+   17       - uses: actions/checkout@v4
+   18       - uses: actions/setup-node@v4
+   19         with:
+   20           node-version: "20"
+   21           cache: 'npm'
+   22       - uses: actions/configure-pages@v4
+   23         with:
+   24           static_site_generator: next
+   25       - run: npm ci
+   26       - run: npx --no-install next build
+   27       - uses: actions/upload-pages-artifact@v3
+   28         with:
+   29           path: ./out
+   30   deploy:
+   31     environment:
+   32       name: github-pages
+   33       url: ${{ steps.deployment.outputs.page_url }}
+   34     runs-on: ubuntu-latest
+   35     needs: build
+   36     steps:
+   37       - id: deployment
+   38         uses: actions/deploy-pages@v4
