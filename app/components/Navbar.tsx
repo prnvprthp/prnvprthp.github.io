@@ -36,6 +36,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Experience', href: '/experience' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Interests', href: '/interests' },
   ];
 
   return (
