@@ -1,3 +1,5 @@
+'use client';
+
 // app/interests/page.tsx
 import Image from 'next/image';
 
@@ -137,3 +139,4 @@ export default function InterestsPage() {
     </div>
   );
 }
+
