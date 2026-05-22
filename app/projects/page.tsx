@@ -46,14 +46,12 @@ export default function ProjectsPage() {
         {
           title: "INSILLION USA GTM Strategy",
           tech: "Market Research • Financial Modeling • GTM",
-          description: "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development. Resulted in a 100% salary appraisal and successful first-product rollout.",
-          pdf: "/pdfs/Resume_Pranav_Prathap.pdf"
+          description: "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development. Resulted in a 100% salary appraisal and successful first-product rollout."
         },
         {
           title: "AB InBev International Pilots",
           tech: "Strategic Planning • Project Mgmt",
-          description: "Crafted 3-year research-driven strategic plans for the Beer-Garage division. Directed full-cycle international pilot initiatives, delivering 3 successful market rollouts across Sub-Saharan Africa and Europe to test long-term business priorities.",
-          pdf: "/pdfs/Resume_Pranav_Prathap.pdf"
+          description: "Crafted 3-year research-driven strategic plans for the Beer-Garage division. Directed full-cycle international pilot initiatives, delivering 3 successful market rollouts across Sub-Saharan Africa and Europe to test long-term business priorities."
         }
       ]
     },
@@ -91,28 +89,45 @@ export default function ProjectsPage() {
                 {section.category}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {section.items.map((project, i) => (
-                  <a
-                    key={i}
-                    href={project.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
-                  >
-                    <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
-                      {project.tech}
-                    </p>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
-                      VIEW CASE STUDY <span className="group-hover:translate-x-1 transition-transform">→</span>
+                {section.items.map((project, i) => {
+                  const CardContent = (
+                    <>
+                      <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
+                        {project.tech}
+                      </p>
+                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+                      {project.pdf && (
+                        <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
+                          VIEW CASE STUDY <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                      )}
+                    </>
+                  );
+
+                  return project.pdf ? (
+                    <a
+                      key={i}
+                      href={project.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
+                    >
+                      {CardContent}
+                    </a>
+                  ) : (
+                    <div
+                      key={i}
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl transition-all block"
+                    >
+                      {CardContent}
                     </div>
-                  </a>
-                ))}
+                  );
+                })}
               </div>
             </section>
           ))}
