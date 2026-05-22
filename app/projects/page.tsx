@@ -1,6 +1,29 @@
 export default function ProjectsPage() {
   const projectCategories = [
     {
+      category: "Predictive Modeling & Risk",
+      items: [
+        {
+          title: "B2B Customer Churn Prediction",
+          tech: "XGBoost • SMOTE • SHAP • K-Means",
+          description: "Developed a segment-specific churn prediction system using XGBoost to identify at-risk freight customers. Integrated SMOTE for class imbalance and SHAP for model explainability, achieving 87.9% combined recall.",
+          pdf: "/pdfs/CustomerChurnModel.pdf"
+        },
+        {
+          title: "Patient Retention Strategy",
+          tech: "R • Tidyverse • Predictive Modeling",
+          description: "Developed a behavior-based churn prediction model with 81.3% sensitivity, identifying depression and severity as primary churn drivers.",
+          pdf: "/pdfs/Patient_Retention_Strategy_Final.pdf"
+        },
+        {
+          title: "Investment Risk & Monte Carlo",
+          tech: "Python • Brownian Motion • Simulation",
+          description: "Optimized overbooking strategies for Alaska Airlines and modeled Bitcoin price fluctuations using stochastic processes.",
+          pdf: "/pdfs/Investment_Risk_Probability_Modeling_Final.pdf"
+        }
+      ]
+    },
+    {
       category: "Data Infrastructure & Dashboards",
       items: [
         {
@@ -14,23 +37,6 @@ export default function ProjectsPage() {
           tech: "Plotly • Dash • FRED API",
           description: "An interactive dashboard tracking industry headcounts and wage growth across North America. Presented to the MSBA Board for technical excellence.",
           pdf: "/pdfs/Employment & Economic Trends Dashboard_Final.pdf"
-        }
-      ]
-    },
-    {
-      category: "Predictive Modeling & Risk",
-      items: [
-        {
-          title: "Patient Retention Strategy",
-          tech: "R • Tidyverse • Predictive Modeling",
-          description: "Developed a behavior-based churn prediction model with 81.3% sensitivity, identifying depression and severity as primary churn drivers.",
-          pdf: "/pdfs/Patient_Retention_Strategy_Final.pdf"
-        },
-        {
-          title: "Investment Risk & Monte Carlo",
-          tech: "Python • Brownian Motion • Simulation",
-          description: "Optimized overbooking strategies for Alaska Airlines and modeled Bitcoin price fluctuations using stochastic processes.",
-          pdf: "/pdfs/Investment_Risk_Probability_Modeling_Final.pdf"
         }
       ]
     },
