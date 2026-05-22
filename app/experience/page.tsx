@@ -5,9 +5,9 @@ export default function ExperiencePage() {
       role: "Graduate Assistant",
       period: "Feb 2026 — Present",
       points: [
-        "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses.",
-        "Automating print shop communications & marketing workflows, migrating tools from Google to the Microsoft ecosystem.",
-        "Boosting process efficiency and ensuring alignment with university IT guidelines."
+        "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses, supporting 3 professors in curriculum delivery and technical student support.",
+        "Automating print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
+        "Boosting overall process efficiency and ensuring strict alignment with university IT guidelines and data security standards."
       ]
     },
     {
@@ -15,10 +15,11 @@ export default function ExperiencePage() {
       role: "Product Marketing and Management",
       period: "Jan 2023 — July 2025",
       points: [
-        "Built predictive fit/gap models assessing market risk, competition & adoption trends for global expansion strategy.",
-        "Rebuilt pre-sales database & CRM workflows, cutting retrieval time from ~10 days to <2 minutes.",
-        "Directed 1st USA product launch, coordinating timelines, resources & approvals for on-schedule rollout.",
-        "Integrated LLM APIs & built client-facing embedded web components for automated IDP and quote analysis."
+        "Built predictive fit/gap models assessing market risk, competition, and adoption trends to inform global expansion strategy and product-market fit.",
+        "Rebuilt pre-sales database & CRM workflows, significantly increasing data integrity and cutting retrieval time from ~10 days to under 2 minutes through process automation.",
+        "Aligned cross-functional teams and authored 5 Business Requirement Documents (BRDs), translating complex technical objectives into strategic executive insights.",
+        "Directed the first USA product launch, coordinating complex timelines, resources, and multi-level approvals to ensure a successful on-schedule rollout.",
+        "Integrated LLM APIs and developed client-facing embedded web components for automated Intelligent Document Processing (IDP) and quote analysis, enhancing customer self-service capabilities."
       ],
       badge: "100% Salary Appraisal"
     },
@@ -27,9 +28,9 @@ export default function ExperiencePage() {
       role: "Research Analyst",
       period: "May 2021 — Jan 2022",
       points: [
-        "Identified internal workflow inefficiencies in the Beer-Garage division & delivered data-driven improvements.",
-        "Crafted 3-year, research-driven strategic plans to guide long-term business priorities and capitalize on market trends.",
-        "Drove full-cycle international pilot initiatives, delivering 3 successful rollouts across Sub-Saharan Africa & Europe."
+        "Identified critical internal workflow inefficiencies within the Beer-Garage division and delivered data-driven improvements that optimized operational throughput.",
+        "Crafted comprehensive 3-year, research-driven strategic plans to guide long-term business priorities and capitalize on emerging global market trends.",
+        "Drove full-cycle international pilot initiatives, successfully delivering 3 market rollouts across Sub-Saharan Africa and Europe, establishing a blueprint for regional expansion."
       ]
     }
   ];

@@ -6,19 +6,19 @@ export default function ProjectsPage() {
         {
           title: "B2B Customer Churn Prediction",
           tech: "XGBoost • SMOTE • SHAP • K-Means",
-          description: "Developed a segment-specific churn prediction system using XGBoost to identify at-risk freight customers. Integrated SMOTE for class imbalance and SHAP for model explainability, achieving 87.9% combined recall.",
+          description: "Developed a segment-specific churn prediction system using XGBoost to identify at-risk freight customers. Integrated SMOTE for class imbalance and SHAP for model explainability, achieving 87.9% combined recall. Identified Shipping Momentum as the dominant churn signal (61% explanatory power).",
           pdf: "/pdfs/CustomerChurnModel.pdf"
         },
         {
           title: "Patient Retention Strategy",
           tech: "R • Tidyverse • Predictive Modeling",
-          description: "Developed a behavior-based churn prediction model with 81.3% sensitivity, identifying depression and severity as primary churn drivers.",
+          description: "Developed a behavior-based churn prediction model with 81.3% sensitivity for healthcare providers. Leveraged Logistic Regression and Random Forest to identify depression and severity as primary churn drivers, enabling targeted proactive retention strategies.",
           pdf: "/pdfs/Patient_Retention_Strategy_Final.pdf"
         },
         {
           title: "Investment Risk & Monte Carlo",
           tech: "Python • Brownian Motion • Simulation",
-          description: "Optimized overbooking strategies for Alaska Airlines and modeled Bitcoin price fluctuations using stochastic processes.",
+          description: "Optimized overbooking strategies for Alaska Airlines through probabilistic modeling and simulated Bitcoin price fluctuations using Geometric Brownian Motion to assess tail-end investment risks and portfolio volatility.",
           pdf: "/pdfs/Investment_Risk_Probability_Modeling_Final.pdf"
         }
       ]
@@ -29,14 +29,31 @@ export default function ProjectsPage() {
         {
           title: "Virginia Public Health Infrastructure",
           tech: "SQL • Tableau • Python",
-          description: "Built a centralized SQL data warehouse to monitor drug overdose trends. Integrated socioeconomic indicators to guide proactive public policy interventions.",
+          description: "Built a centralized SQL data warehouse to monitor statewide drug overdose trends. Integrated socioeconomic indicators from public census data to create interactive Tableau dashboards that guide proactive public health policy interventions.",
           pdf: "/pdfs/Virginia_PublicHealth_Data_Infrastructure_Dashboard_Final.pdf"
         },
         {
           title: "Employment & Economic Trends",
           tech: "Plotly • Dash • FRED API",
-          description: "An interactive dashboard tracking industry headcounts and wage growth across North America. Presented to the MSBA Board for technical excellence.",
+          description: "An interactive analytics dashboard tracking industry headcounts and wage growth across North America using the FRED API. Presented to the MSBA Board of Advisors to demonstrate technical excellence in data storytelling and real-time visualization.",
           pdf: "/pdfs/Employment & Economic Trends Dashboard_Final.pdf"
+        }
+      ]
+    },
+    {
+      category: "Business Strategy & GTM",
+      items: [
+        {
+          title: "INSILLION USA GTM Strategy",
+          tech: "Market Research • Financial Modeling • GTM",
+          description: "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development. Resulted in a 100% salary appraisal and successful first-product rollout.",
+          pdf: "/pdfs/Resume_Pranav_Prathap.pdf"
+        },
+        {
+          title: "AB InBev International Pilots",
+          tech: "Strategic Planning • Project Mgmt",
+          description: "Crafted 3-year research-driven strategic plans for the Beer-Garage division. Directed full-cycle international pilot initiatives, delivering 3 successful market rollouts across Sub-Saharan Africa and Europe to test long-term business priorities.",
+          pdf: "/pdfs/Resume_Pranav_Prathap.pdf"
         }
       ]
     },
@@ -46,13 +63,13 @@ export default function ProjectsPage() {
         {
           title: "Allegiant Demand Forecasting",
           tech: "TSLM • R • Time Series",
-          description: "Forecasted load factors and passenger revenue to recommend regional market expansion opportunities for ultra-low-cost carriers.",
+          description: "Performed time-series analysis on flight occupancy and ancillary passenger revenue using TSLM. Forecasted seasonal demand patterns to recommend regional market expansion opportunities and fleet utilization strategies for ultra-low-cost carriers.",
           pdf: "/pdfs/Allegiant_Demand_Revenue_Forecasting_Final.pdf"
         },
         {
           title: "Frontier Airlines Operational Audit",
           tech: "R • Data Cleaning • Visualization",
-          description: "Analyzed carrier delay trends across U.S. airports to identify systemic operational inefficiencies.",
+          description: "Conducted an exhaustive operational audit of carrier delay trends across major U.S. airports. Identified systemic inefficiencies in turnaround times and airport-specific bottlenecks to recommend data-driven operational improvements.",
           pdf: "/pdfs/Airline Operational Audit_Final.pdf"
         }
       ]
