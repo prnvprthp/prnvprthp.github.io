@@ -77,38 +77,38 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-32 pb-20 px-6 md:px-24 max-w-6xl mx-auto">
+    <main className="min-h-screen pt-24 md:pt-32 pb-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
       <div>
-        <h1 className="text-4xl font-bold mb-4 text-foreground">Selected Works</h1>
-        <p className="text-muted-foreground mb-16 max-w-xl">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Selected Works</h1>
+        <p className="text-muted-foreground mb-12 md:mb-16 max-w-xl">
           A collection of projects bridging data engineering, statistical modeling, and business strategy.
         </p>
 
-        <div className="space-y-24">
+        <div className="space-y-16 md:space-y-24">
           {projectCategories.map((section, idx) => (
             <section key={idx}>
-              <h2 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-8 border-b border-border pb-2">
+              <h2 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-6 md:mb-8 border-b border-border pb-2">
                 {section.category}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {section.items.map((project, i) => (
                   <a
                     key={i}
                     href={project.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
+                    className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
                   >
                     <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
                       {project.tech}
                     </p>
-                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
+                    <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
                       VIEW CASE STUDY <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                   </a>

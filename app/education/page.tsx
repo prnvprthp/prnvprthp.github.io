@@ -42,27 +42,27 @@ export default function EducationPage() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-32">
-      <h1 className="text-4xl font-bold mb-16 border-b border-border pb-4 text-foreground">
+    <div className="max-w-4xl mx-auto px-6 py-24 md:py-32">
+      <h1 className="text-3xl md:text-4xl font-bold mb-12 md:mb-16 border-b border-border pb-4 text-foreground">
         Education
       </h1>
 
-      <div className="space-y-20">
+      <div className="space-y-16 md:space-y-20">
         {education.map((edu, i) => (
           <div 
             key={i}
-            className="relative border-l-2 border-accent pl-8"
+            className="relative border-l-2 border-accent pl-6 md:pl-8"
           >
-            <div className="flex justify-between items-start flex-wrap gap-2">
+            <div className="flex justify-between items-start flex-wrap gap-x-4 gap-y-2">
               <div>
-                <h2 className="text-2xl font-bold text-foreground">{edu.degree}</h2>
-                <p className="text-accent font-medium text-lg">{edu.institution}</p>
-                <p className="text-muted-foreground text-sm">{edu.location}</p>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground">{edu.degree}</h2>
+                <p className="text-accent font-medium text-base md:text-lg">{edu.institution}</p>
+                <p className="text-muted-foreground text-xs md:text-sm">{edu.location}</p>
               </div>
-              <span className="text-muted-foreground font-mono text-sm">{edu.period}</span>
+              <span className="text-muted-foreground font-mono text-xs md:text-sm">{edu.period}</span>
             </div>
 
-            <ul className="mt-6 space-y-4 text-muted-foreground">
+            <ul className="mt-6 space-y-4 text-muted-foreground text-sm md:text-base">
               {edu.details.map((detail, j) => (
                 <li key={j} className="flex items-start">
                   <span className="mr-2 text-accent">•</span>
@@ -74,7 +74,7 @@ export default function EducationPage() {
             {edu.badge && (
               <div className="mt-6 inline-block bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">
                 <span className="text-accent text-xs font-bold uppercase tracking-wider">
-                  ✨ {edu.badge}
+                  {edu.badge}
                 </span>
               </div>
             )}
@@ -82,19 +82,19 @@ export default function EducationPage() {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold mt-32 mb-12 text-foreground">
+      <h2 className="text-xl md:text-2xl font-bold mt-24 md:mt-32 mb-8 md:mb-12 text-foreground">
         Certifications & Professional Development
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {certifications.map((cert, i) => (
           <div 
             key={i}
             className="p-6 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all"
           >
-            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">{cert.issuer}</p>
-            <h3 className="text-lg font-bold text-foreground mb-2">{cert.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{cert.description}</p>
+            <p className="text-accent font-bold text-[10px] md:text-xs uppercase tracking-widest mb-2">{cert.issuer}</p>
+            <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{cert.title}</h3>
+            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{cert.description}</p>
           </div>
         ))}
       </div>
