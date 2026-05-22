@@ -5,22 +5,32 @@ export default function ExperiencePage() {
       role: "Graduate Assistant",
       period: "Feb 2026 — Present",
       points: [
-        "Supporting financial management and statistics across 7 undergraduate courses.",
-        "Leading migration from Google Workspace to Microsoft ecosystem.",
-        "Automating marketing workflows to boost process efficiency."
-      ],
-      badge: "40% Merit Scholarship"
+        "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses.",
+        "Automating print shop communications & marketing workflows, migrating tools from Google to the Microsoft ecosystem.",
+        "Boosting process efficiency and ensuring alignment with university IT guidelines."
+      ]
     },
     {
       company: "INSILLION",
-      role: "GTM Strategy & Market Research",
-      period: "2022 — 2025",
+      role: "Product Marketing and Management",
+      period: "Jan 2023 — July 2025",
       points: [
-        "Engineered end-to-end GTM strategy for U.S. market expansion.",
-        "Conducted competitor benchmarking and partnership development.",
-        "First employee in 24 years to receive a 100% salary appraisal for performance."
+        "Built predictive fit/gap models assessing market risk, competition & adoption trends for global expansion strategy.",
+        "Rebuilt pre-sales database & CRM workflows, cutting retrieval time from ~10 days to <2 minutes.",
+        "Directed 1st USA product launch, coordinating timelines, resources & approvals for on-schedule rollout.",
+        "Integrated LLM APIs & built client-facing embedded web components for automated IDP and quote analysis."
       ],
       badge: "100% Salary Appraisal"
+    },
+    {
+      company: "Anheuser-Busch InBev",
+      role: "Research Analyst",
+      period: "May 2021 — Jan 2022",
+      points: [
+        "Identified internal workflow inefficiencies in the Beer-Garage division & delivered data-driven improvements.",
+        "Crafted 3-year, research-driven strategic plans to guide long-term business priorities and capitalize on market trends.",
+        "Drove full-cycle international pilot initiatives, delivering 3 successful rollouts across Sub-Saharan Africa & Europe."
+      ]
     }
   ];
 
@@ -53,11 +63,13 @@ export default function ExperiencePage() {
               ))}
             </ul>
 
-            <div className="mt-6 inline-block bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">
-              <span className="text-accent text-xs font-bold uppercase tracking-wider">
-                ✨ {exp.badge}
-              </span>
-            </div>
+            {exp.badge && (
+              <div className="mt-6 inline-block bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">
+                <span className="text-accent text-xs font-bold uppercase tracking-wider">
+                  ✨ {exp.badge}
+                </span>
+              </div>
+            )}
           </div>
         ))}
       </div>

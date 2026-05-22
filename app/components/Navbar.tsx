@@ -84,7 +84,7 @@ export default function Navbar() {
             href="/pdfs/Resume_Pranav_Prathap.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-accent transition-all duration-300"
+            className="px-4 py-1.5 rounded-full bg-accent text-white border border-accent hover:bg-transparent hover:text-accent transition-all duration-300 font-bold"
           >
             Resume
           </a>
