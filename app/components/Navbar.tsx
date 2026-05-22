@@ -35,6 +35,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Experience', href: '/experience' },
+    { name: 'Education', href: '/education' },
     { name: 'Projects', href: '/projects' },
     { name: 'Interests', href: '/interests' },
   ];
@@ -49,7 +50,7 @@ export default function Navbar() {
       </Link>
 
       {/* Navigation Links */}
-      <div className="flex items-center gap-6 md:gap-10 text-sm font-medium">
+      <div className="flex items-center gap-6 md:gap-8 text-sm font-medium text-nowrap">
         {navLinks.map((link) => (
           <Link
             key={link.href}
@@ -78,15 +79,24 @@ export default function Navbar() {
           )}
         </button>
 
-        {/* External LinkedIn Link */}
-        <a 
-          href="https://www.linkedin.com/in/prnvprthp" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="hidden md:block px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-accent transition-all duration-300"
-        >
-          LinkedIn
-        </a>
+        <div className="hidden lg:flex items-center gap-4">
+          <a 
+            href="/pdfs/Resume_Pranav_Prathap.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-accent transition-all duration-300"
+          >
+            Resume
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/prnvprthp" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-accent transition-all duration-300"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
     </nav>
   );
