@@ -5,6 +5,9 @@ import Navbar from "@/app/components/Navbar";
 export const metadata: Metadata = {
   title: "Pranav Prathap | Portfolio",
   description: "MSBA @ William & Mary. Bridging Data Architecture and Strategic GTM.",
+  icons: {
+    icon: "/icon.ico",
+  },
 };
 
 export default function RootLayout({
