@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { Tooltip } from "@/app/components/Tooltip";
 
 const techTooltips: Record<string, string> = {
@@ -150,70 +149,56 @@ const projectCategories: Category[] = [
   },
 ];
 
-function ProjectCarousel({ images, title }: { images: string[]; title: string }) {
-  const [current, setCurrent] = useState(0);
-
+function ProjectImages({ images, title }: { images: string[]; title: string }) {
   if (!images.length) return null;
 
-  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
-  const next = () => setCurrent((c) => (c + 1) % images.length);
+  if (images.length === 1) {
+    return (
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 bg-muted">
+        <img src={images[0]} alt={title} className="w-full h-full object-cover" />
+      </div>
+    );
+  }
 
+  if (images.length === 2) {
+    return (
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 flex gap-px" style={{ background: "var(--border)" }}>
+        {images.map((src, i) => (
+          <img key={i} src={src} alt={`${title} ${i + 1}`} className="flex-1 h-full object-cover" />
+        ))}
+      </div>
+    );
+  }
+
+  if (images.length === 3) {
+    // Magazine: hero left (2/3), two stacked right (1/3)
+    return (
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-52 flex gap-px" style={{ background: "var(--border)" }}>
+        <img src={images[0]} alt={`${title} 1`} className="w-2/3 h-full object-cover" />
+        <div className="w-1/3 flex flex-col gap-px">
+          <img src={images[1]} alt={`${title} 2`} className="flex-1 w-full object-cover" />
+          <img src={images[2]} alt={`${title} 3`} className="flex-1 w-full object-cover" />
+        </div>
+      </div>
+    );
+  }
+
+  // 4+ images: two rows of equal columns
+  const half = Math.ceil(images.length / 2);
+  const top = images.slice(0, half);
+  const bottom = images.slice(half);
   return (
-    <div className="mb-6 rounded-xl overflow-hidden border border-border bg-muted relative group/carousel aspect-video">
-      {/* Images */}
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.img
-          key={current}
-          src={images[current]}
-          alt={`${title} — image ${current + 1} of ${images.length}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
-
-      {/* Prev / Next — only show when multiple images */}
-      {images.length > 1 && (
-        <>
-          <button
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); prev(); }}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity hover:bg-black/60 z-10"
-            aria-label="Previous image"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-          </button>
-          <button
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); next(); }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity hover:bg-black/60 z-10"
-            aria-label="Next image"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </button>
-
-          {/* Dot indicators */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrent(i); }}
-                className={`rounded-full transition-all duration-200 ${
-                  i === current
-                    ? "w-4 h-1.5 bg-white"
-                    : "w-1.5 h-1.5 bg-white/40 hover:bg-white/70"
-                }`}
-                aria-label={`Go to image ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Counter */}
-          <div className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-black/40 text-white text-[10px] font-mono z-10">
-            {current + 1} / {images.length}
-          </div>
-        </>
-      )}
+    <div className="mb-6 rounded-xl overflow-hidden border border-border flex flex-col gap-px" style={{ background: "var(--border)" }}>
+      <div className="flex gap-px h-36">
+        {top.map((src, i) => (
+          <img key={i} src={src} alt={`${title} ${i + 1}`} className="flex-1 h-full object-cover" />
+        ))}
+      </div>
+      <div className="flex gap-px h-36">
+        {bottom.map((src, i) => (
+          <img key={i} src={src} alt={`${title} ${half + i + 1}`} className="flex-1 h-full object-cover" />
+        ))}
+      </div>
     </div>
   );
 }
@@ -253,7 +238,7 @@ export default function ProjectsPage() {
                 const cardInner = (
                   <>
                     {project.images && project.images.length > 0 && (
-                      <ProjectCarousel images={project.images} title={project.title} />
+                      <ProjectImages images={project.images} title={project.title} />
                     )}
 
                     {/* Industry label */}
