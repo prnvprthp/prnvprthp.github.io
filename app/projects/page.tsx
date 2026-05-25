@@ -250,7 +250,7 @@ export default function ProjectsPage() {
                     )}
 
                     {/* Industry label */}
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-3">
+                    <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-3">
                       {project.industry}
                     </p>
 
@@ -259,7 +259,7 @@ export default function ProjectsPage() {
                       {project.tech.map((tool, t) => (
                         <span key={tool} className="flex items-center gap-x-1.5">
                           <Tooltip content={techTooltips[tool] ?? ""}>
-                            <span className="text-[10px] font-mono text-secondary-accent uppercase tracking-widest cursor-default underline decoration-dotted underline-offset-2 decoration-secondary-accent/40 hover:decoration-secondary-accent transition-all">
+                            <span className="text-xs font-mono text-secondary-accent uppercase tracking-widest cursor-default underline decoration-dotted underline-offset-2 decoration-secondary-accent/40 hover:decoration-secondary-accent transition-all">
                               {tool}
                             </span>
                           </Tooltip>
