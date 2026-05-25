@@ -16,6 +16,7 @@ export default function ExperiencePage() {
       period: "Jan 2023 — July 2025",
       points: [
         "Built predictive fit/gap models assessing market risk, competition, and adoption trends to inform global expansion strategy and product-market fit.",
+        "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development.",
         "Rebuilt pre-sales database & CRM workflows, significantly increasing data integrity and cutting retrieval time from ~10 days to under 2 minutes through process automation.",
         "Aligned cross-functional teams and authored 5 Business Requirement Documents (BRDs), translating complex technical objectives into strategic executive insights.",
         "Directed the first USA product launch, coordinating complex timelines, resources, and multi-level approvals to ensure a successful on-schedule rollout.",
@@ -30,7 +31,7 @@ export default function ExperiencePage() {
       points: [
         "Identified critical internal workflow inefficiencies within the Beer-Garage division and delivered data-driven improvements that optimized operational throughput.",
         "Crafted comprehensive 3-year, research-driven strategic plans to guide long-term business priorities and capitalize on emerging global market trends.",
-        "Drove full-cycle international pilot initiatives, successfully delivering 3 market rollouts across Sub-Saharan Africa and Europe, establishing a blueprint for regional expansion."
+        "Directed full-cycle international pilot initiatives, successfully delivering 3 market rollouts across Sub-Saharan Africa and Europe, establishing a blueprint for regional expansion."
       ]
     }
   ];

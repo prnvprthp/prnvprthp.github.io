@@ -41,21 +41,6 @@ export default function ProjectsPage() {
       ]
     },
     {
-      category: "Business Strategy & GTM",
-      items: [
-        {
-          title: "INSILLION USA GTM Strategy",
-          tech: "Market Research • Financial Modeling • GTM",
-          description: "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development. Resulted in a 100% salary appraisal and successful first-product rollout."
-        },
-        {
-          title: "AB InBev International Pilots",
-          tech: "Strategic Planning • Project Mgmt",
-          description: "Crafted 3-year research-driven strategic plans for the Beer-Garage division. Directed full-cycle international pilot initiatives, delivering 3 successful market rollouts across Sub-Saharan Africa and Europe to test long-term business priorities."
-        }
-      ]
-    },
-    {
       category: "Operational Audits & Forecasting",
       items: [
         {
@@ -77,9 +62,9 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen pt-24 md:pt-32 pb-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Selected Works</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Projects</h1>
         <p className="text-muted-foreground mb-12 md:mb-16 max-w-xl">
-          A collection of projects bridging data engineering, statistical modeling, and business strategy.
+          Here's a look at some of my work, blending data engineering, statistical modeling, and business strategy.
         </p>
 
         <div className="space-y-16 md:space-y-24">
@@ -88,11 +73,20 @@ export default function ProjectsPage() {
               <h2 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-6 md:mb-8 border-b border-border pb-2">
                 {section.category}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 gap-6 md:gap-8">
                 {section.items.map((project, i) => {
                   const CardContent = (
                     <>
-                      <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
+                      {project.image && (
+                        <div className="mb-6 rounded-lg overflow-hidden border border-border bg-muted">
+                          <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            className="w-full h-48 object-cover"
+                          />
+                        </div>
+                      )}
+                      <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest text-secondary-accent">
                         {project.tech}
                       </p>
                       <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
@@ -115,14 +109,14 @@ export default function ProjectsPage() {
                       href={project.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-all hover:-translate-y-2 block"
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-all block"
                     >
                       {CardContent}
                     </a>
                   ) : (
                     <div
                       key={i}
-                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-all hover:-translate-y-2 block"
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-all block"
                     >
                       {CardContent}
                     </div>
