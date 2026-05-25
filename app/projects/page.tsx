@@ -250,7 +250,7 @@ export default function ProjectsPage() {
                     )}
 
                     {/* Industry label */}
-                    <p className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/60 mb-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-3">
                       {project.industry}
                     </p>
 

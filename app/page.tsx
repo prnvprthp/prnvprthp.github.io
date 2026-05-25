@@ -173,24 +173,35 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5"
         >
-          <span className="text-[9px] font-mono uppercase tracking-[0.3em] text-muted-foreground/70">
-            scroll
+          <span className="text-xs font-medium tracking-widest text-muted-foreground">
+            Scroll to explore
           </span>
           {/* Mouse shell */}
-          <div className="w-[22px] h-[34px] rounded-full border-2 border-muted-foreground/40 flex items-start justify-center pt-[5px]">
+          <div className="w-[28px] h-[44px] rounded-full border-2 border-muted-foreground/60 flex items-start justify-center pt-[7px]">
             <motion.div
-              className="w-[3px] h-[6px] rounded-full bg-muted-foreground/70"
-              animate={{ y: [0, 10, 0], opacity: [1, 0.2, 1] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+              className="w-[4px] h-[8px] rounded-full bg-accent"
+              animate={{ y: [0, 14, 0], opacity: [1, 0.15, 1] }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
             />
           </div>
+          {/* Chevron below mouse */}
+          <motion.svg
+            width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" strokeWidth="2.5"
+            strokeLinecap="round" strokeLinejoin="round"
+            className="text-muted-foreground/70"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+          >
+            <path d="m6 9 6 6 6-6" />
+          </motion.svg>
         </motion.div>
       </main>
 
       {/* ── Competencies ──────────────────────────────── */}
-      <section className="pb-28 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,9 +209,9 @@ export default function Home() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="border-t border-border pt-16"
         >
-          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             Core Competencies
-          </p>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
             {competencies.map((block, i) => (
               <motion.div
@@ -214,19 +225,16 @@ export default function Home() {
                   delay: i * 0.1,
                 }}
               >
-                <h3 className="text-sm font-bold text-foreground mb-5">
+                <h3 className="text-base font-bold text-foreground mb-4">
                   {block.area}
                 </h3>
                 <ul className="space-y-2.5">
                   {block.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="flex items-center gap-2.5 text-sm text-muted-foreground"
+                      className="flex items-center gap-3 text-sm text-foreground/70"
                     >
-                      <span
-                        className="w-1 h-1 rounded-full shrink-0"
-                        style={{ background: "var(--accent)", opacity: 0.7 }}
-                      />
+                      <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-accent/70" />
                       {skill}
                     </li>
                   ))}
@@ -246,9 +254,9 @@ export default function Home() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="border-t border-border pt-16"
         >
-          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-12">
-            Tools & Technologies
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
+            Tools &amp; Technologies
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-10">
             {techStack.map((group, i) => (
               <motion.div
@@ -258,14 +266,14 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
               >
-                <p className="text-[9px] font-mono uppercase tracking-[0.25em] text-muted-foreground/60 mb-3">
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
                   {group.category}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {group.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-2.5 py-1 rounded-md text-[10px] font-mono border border-border text-muted-foreground hover:border-secondary-accent hover:text-secondary-accent transition-all duration-200 cursor-default"
+                      className="px-3 py-1.5 rounded-md text-xs font-medium border border-border text-foreground/70 hover:border-secondary-accent hover:text-secondary-accent transition-all duration-200 cursor-default"
                     >
                       {tool}
                     </span>
