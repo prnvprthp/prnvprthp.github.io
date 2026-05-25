@@ -113,7 +113,7 @@ export default function Home() {
             {stats.map((stat) => (
               <span
                 key={stat}
-                className="px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest border border-border text-muted-foreground bg-muted/60"
+                className="px-4 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest border border-foreground/15 text-foreground/50"
               >
                 {stat}
               </span>
@@ -145,30 +145,20 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[9px] font-mono uppercase tracking-[0.3em] text-muted-foreground/50">
+          <span className="text-[9px] font-mono uppercase tracking-[0.3em] text-muted-foreground/70">
             scroll
           </span>
-          <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-muted-foreground/40"
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </motion.div>
+          {/* Mouse shell */}
+          <div className="w-[22px] h-[34px] rounded-full border-2 border-muted-foreground/40 flex items-start justify-center pt-[5px]">
+            <motion.div
+              className="w-[3px] h-[6px] rounded-full bg-muted-foreground/70"
+              animate={{ y: [0, 10, 0], opacity: [1, 0.2, 1] }}
+              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+            />
+          </div>
         </motion.div>
       </main>
 

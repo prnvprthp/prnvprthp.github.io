@@ -29,7 +29,7 @@ export function Tooltip({ content, children }: TooltipProps) {
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 z-50 pointer-events-none"
           >
-            <div className="bg-foreground text-background text-[10px] leading-snug font-medium px-3 py-2 rounded-lg max-w-[200px] text-center whitespace-normal shadow-xl">
+            <div className="bg-foreground text-background text-[10px] leading-relaxed font-medium px-3.5 py-2.5 rounded-lg w-[260px] text-left whitespace-normal shadow-xl">
               {content}
             </div>
             {/* Arrow */}

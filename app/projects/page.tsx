@@ -136,7 +136,7 @@ export default function ProjectsPage() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.4 }}
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-6 md:mb-8 border-b border-border pb-2">
+            <h2 className="text-lg md:text-xl font-bold text-foreground mb-6 md:mb-8 border-b border-border pb-3">
               {section.category}
             </h2>
 
@@ -157,26 +157,25 @@ export default function ProjectsPage() {
                       </div>
                     )}
 
-                    {/* Industry + Tech row */}
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
-                      <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-md border border-border text-muted-foreground bg-muted/60">
-                        {project.industry}
-                      </span>
-                      <span className="text-border text-[10px] select-none hidden sm:inline">·</span>
-                      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
-                        {project.tech.map((tool, t) => (
-                          <span key={tool} className="flex items-center gap-x-1.5">
-                            <Tooltip content={techTooltips[tool] ?? ""}>
-                              <span className="text-[10px] font-mono text-secondary-accent uppercase tracking-widest cursor-default underline decoration-dotted underline-offset-2 decoration-secondary-accent/40 hover:decoration-secondary-accent transition-all">
-                                {tool}
-                              </span>
-                            </Tooltip>
-                            {t < project.tech.length - 1 && (
-                              <span className="text-border/60 text-[10px] select-none">·</span>
-                            )}
-                          </span>
-                        ))}
-                      </div>
+                    {/* Industry label */}
+                    <p className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/60 mb-3">
+                      {project.industry}
+                    </p>
+
+                    {/* Tech tags */}
+                    <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-4">
+                      {project.tech.map((tool, t) => (
+                        <span key={tool} className="flex items-center gap-x-1.5">
+                          <Tooltip content={techTooltips[tool] ?? ""}>
+                            <span className="text-[10px] font-mono text-secondary-accent uppercase tracking-widest cursor-default underline decoration-dotted underline-offset-2 decoration-secondary-accent/40 hover:decoration-secondary-accent transition-all">
+                              {tool}
+                            </span>
+                          </Tooltip>
+                          {t < project.tech.length - 1 && (
+                            <span className="text-foreground/20 text-[10px] select-none">·</span>
+                          )}
+                        </span>
+                      ))}
                     </div>
 
                     <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
