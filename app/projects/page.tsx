@@ -166,46 +166,50 @@ function ProjectImages({ images, title }: { images: string[]; title: string }) {
   if (!images.length) return null;
 
   const divider = "var(--border)";
-
-  // 1 image — full width
-  if (images.length === 1) {
-    return (
-      <div className="mb-6 rounded-xl overflow-hidden border border-border h-52 relative bg-muted">
-        <img src={images[0]} alt={title} className="absolute inset-0 w-full h-full object-contain" />
-      </div>
-    );
-  }
-
-  // 2–3 images — equal columns, all content visible
-  if (images.length <= 3) {
-    return (
-      <div
-        className="mb-6 rounded-xl overflow-hidden border border-border flex gap-px h-52"
-        style={{ background: divider }}
-      >
-        {images.map((src, i) => (
-          <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />
-        ))}
-      </div>
-    );
-  }
-
-  // 4+ images — two equal rows
   const half = Math.ceil(images.length / 2);
+
   return (
-    <div
-      className="mb-6 rounded-xl overflow-hidden border border-border flex flex-col gap-px"
-      style={{ background: divider }}
-    >
-      <div className="flex gap-px h-40">
-        {images.slice(0, half).map((src, i) => (
-          <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />
+    <div className="mb-6">
+      {/* Mobile: horizontal snap-scroll carousel */}
+      <div className="md:hidden flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide">
+        {images.map((src, i) => (
+          <div
+            key={i}
+            className="relative flex-none w-[80%] h-48 rounded-xl border border-border bg-muted snap-center overflow-hidden"
+          >
+            <img src={src} alt={`${title} ${i + 1}`} className="absolute inset-0 w-full h-full object-contain" />
+          </div>
         ))}
       </div>
-      <div className="flex gap-px h-40">
-        {images.slice(half).map((src, i) => (
-          <Thumb key={i} src={src} alt={`${title} ${half + i + 1}`} />
-        ))}
+
+      {/* Desktop: magazine grid */}
+      <div className="hidden md:block">
+        {images.length === 1 && (
+          <div className="rounded-xl overflow-hidden border border-border h-52 relative bg-muted">
+            <img src={images[0]} alt={title} className="absolute inset-0 w-full h-full object-contain" />
+          </div>
+        )}
+        {images.length >= 2 && images.length <= 3 && (
+          <div className="rounded-xl overflow-hidden border border-border flex gap-px h-52" style={{ background: divider }}>
+            {images.map((src, i) => (
+              <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />
+            ))}
+          </div>
+        )}
+        {images.length >= 4 && (
+          <div className="rounded-xl overflow-hidden border border-border flex flex-col gap-px" style={{ background: divider }}>
+            <div className="flex gap-px h-40">
+              {images.slice(0, half).map((src, i) => (
+                <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />
+              ))}
+            </div>
+            <div className="flex gap-px h-40">
+              {images.slice(half).map((src, i) => (
+                <Thumb key={i} src={src} alt={`${title} ${half + i + 1}`} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

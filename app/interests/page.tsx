@@ -44,7 +44,7 @@ const interestCategories = [
 
 export default function InterestsPage() {
   return (
-    <main className="min-h-screen pt-32 pb-20 px-6 md:px-24 max-w-6xl mx-auto">
+    <main className="min-h-screen pt-24 md:pt-32 pb-20 px-6 md:px-24 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function InterestsPage() {
         </p>
       </motion.div>
 
-      <div className="space-y-24">
+      <div className="space-y-16 md:space-y-24">
         {interestCategories.map((section, idx) => (
           <motion.section
             key={idx}
@@ -109,7 +109,7 @@ export default function InterestsPage() {
                     whileHover={!item.comingSoon ? { y: -6 } : {}}
                   >
                     {item.comingSoon ? (
-                      <div className="group p-8 bg-muted/40 border border-border rounded-2xl transition-colors cursor-default opacity-80">
+                      <div className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl transition-colors cursor-default opacity-80">
                         {inner}
                       </div>
                     ) : (
@@ -117,7 +117,7 @@ export default function InterestsPage() {
                         href={item.href}
                         target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors block"
+                        className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors block"
                       >
                         {inner}
                       </a>
