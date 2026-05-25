@@ -4,9 +4,19 @@ import Navbar from "@/app/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Pranav Prathap | Portfolio",
-  description: "MSBA @ William & Mary. Bridging Data Architecture and Strategic GTM.",
+  description: "MSBA @ William & Mary. Building at the intersection of data architecture and strategic go-to-market.",
   icons: {
     icon: "/icon.ico",
+  },
+  openGraph: {
+    title: "Pranav Prathap | Portfolio",
+    description: "MSBA @ William & Mary. Building at the intersection of data architecture and strategic go-to-market.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pranav Prathap | Portfolio",
+    description: "MSBA @ William & Mary. Building at the intersection of data architecture and strategic go-to-market.",
   },
 };
 

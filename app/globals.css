@@ -8,28 +8,29 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-secondary-accent: var(--secondary-accent);
 }
 
 /* 2. Define the variables for Light Mode (Default) */
 :root {
-  --background: #ffffff;
+  --background: #FAFAF9;
   --foreground: #0f172a;
-  --accent: #2563eb;
-  --muted: #f1f5f9;
+  --accent: #6366F1;
+  --muted: #F0F0ED;
   --muted-foreground: #64748b;
-  --border: #e2e8f0;
-  --secondary-accent: #10b981; /* A subtle green */
+  --border: #E5E5E2;
+  --secondary-accent: #F59E0B;
 }
 
 /* 3. Define the variables for Dark Mode */
 .dark {
   --background: #09090b;
   --foreground: #f8fafc;
-  --accent: #3b82f6;
+  --accent: #818CF8;
   --muted: #18181b;
   --muted-foreground: #a1a1aa;
   --border: #27272a;
-  --secondary-accent: #34d399; /* A subtle green for dark mode */
+  --secondary-accent: #FBBF24;
 }
 
 /* 4. Global Styles */
@@ -39,12 +40,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ensure smooth transitions for everything */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+a, button, [class*="border"] {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
 a {
