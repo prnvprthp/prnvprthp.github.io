@@ -14,6 +14,33 @@ const fadeUp = (delay = 0) => ({
 
 const stats = ["MSBA · W&M", "3 yrs Industry", "7 Analytics Projects"];
 
+const techStack = [
+  {
+    category: "Languages",
+    tools: ["Python", "R", "SQL", "JavaScript"],
+  },
+  {
+    category: "Machine Learning",
+    tools: ["XGBoost", "Random Forest", "Logistic Regression", "SHAP", "SMOTE", "K-Means", "Scikit-learn"],
+  },
+  {
+    category: "Data & Statistics",
+    tools: ["Monte Carlo Simulation", "Time Series (TSLM)", "Tidyverse", "Brownian Motion", "Pandas", "NumPy"],
+  },
+  {
+    category: "Visualization & BI",
+    tools: ["Tableau", "Plotly", "Dash", "ggplot2", "Matplotlib"],
+  },
+  {
+    category: "Infrastructure & APIs",
+    tools: ["PostgreSQL", "Data Warehousing", "FRED API", "LLM APIs", "ETL Pipelines"],
+  },
+  {
+    category: "Tools & Platforms",
+    tools: ["Microsoft 365", "Google Workspace", "CRM Systems", "Excel", "Git"],
+  },
+];
+
 const competencies = [
   {
     area: "Data & Analytics",
@@ -204,6 +231,46 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── Tech Stack ────────────────────────────────── */}
+      <section className="pb-28 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="border-t border-border pt-16"
+        >
+          <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-12">
+            Tools & Technologies
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-10">
+            {techStack.map((group, i) => (
+              <motion.div
+                key={group.category}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
+              >
+                <p className="text-[9px] font-mono uppercase tracking-[0.25em] text-muted-foreground/60 mb-3">
+                  {group.category}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {group.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-2.5 py-1 rounded-md text-[10px] font-mono border border-border text-muted-foreground hover:border-secondary-accent hover:text-secondary-accent transition-all duration-200 cursor-default"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>

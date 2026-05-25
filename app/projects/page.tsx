@@ -31,7 +31,8 @@ type Project = {
   tech: string[];
   description: string;
   pdf?: string;
-  image?: string;
+  link?: string;
+  images?: string[];
 };
 
 type Category = {
@@ -50,6 +51,11 @@ const projectCategories: Category[] = [
         description:
           "Developed a segment-specific churn prediction system using XGBoost to identify at-risk freight customers. Integrated SMOTE for class imbalance and SHAP for model explainability, achieving 87.9% combined recall. Identified Shipping Momentum as the dominant churn signal (61% explanatory power).",
         pdf: "/pdfs/CustomerChurnModel.pdf",
+        images: [
+          "/project-images/churn-prediction_1.png",
+          "/project-images/churn-prediction_2.png",
+          "/project-images/churn-prediction_3.png",
+        ],
       },
       {
         title: "Patient Retention Strategy",
@@ -58,6 +64,10 @@ const projectCategories: Category[] = [
         description:
           "Developed a behavior-based churn prediction model with 81.3% sensitivity for healthcare providers. Leveraged Logistic Regression and Random Forest to identify depression and severity as primary churn drivers, enabling targeted proactive retention strategies.",
         pdf: "/pdfs/Patient_Retention_Strategy_Final.pdf",
+        images: [
+          "/project-images/patient-retention_1.png",
+          "/project-images/patient-retention_2.png",
+        ],
       },
       {
         title: "Investment Risk & Monte Carlo",
@@ -66,6 +76,11 @@ const projectCategories: Category[] = [
         description:
           "Optimized overbooking strategies for Alaska Airlines through probabilistic modeling and simulated Bitcoin price fluctuations using Geometric Brownian Motion to assess tail-end investment risks and portfolio volatility.",
         pdf: "/pdfs/Investment_Risk_Probability_Modeling_Final.pdf",
+        images: [
+          "/project-images/monte-carlo_1.png",
+          "/project-images/monte-carlo_2.png",
+          "/project-images/monte-carlo_3.png",
+        ],
       },
     ],
   },
@@ -79,6 +94,11 @@ const projectCategories: Category[] = [
         description:
           "Built a centralized SQL data warehouse to monitor statewide drug overdose trends. Integrated socioeconomic indicators from public census data to create interactive Tableau dashboards that guide proactive public health policy interventions.",
         pdf: "/pdfs/Virginia_PublicHealth_Data_Infrastructure_Dashboard_Final.pdf",
+        images: [
+          "/project-images/public-health-dashboard_1.png",
+          "/project-images/public-health-dashboard_2.png",
+          "/project-images/public-health-dashboard_3.png",
+        ],
       },
       {
         title: "Employment & Economic Trends",
@@ -87,6 +107,12 @@ const projectCategories: Category[] = [
         description:
           "An interactive analytics dashboard tracking industry headcounts and wage growth across North America using the FRED API. Presented to the MSBA Board of Advisors to demonstrate technical excellence in data storytelling and real-time visualization.",
         pdf: "/pdfs/Employment & Economic Trends Dashboard_Final.pdf",
+        link: "https://ctba-final-team13.onrender.com",
+        images: [
+          "/project-images/employment-dashboard_1.png",
+          "/project-images/employment-dashboard_2.png",
+          "/project-images/employment-dashboard_3.png",
+        ],
       },
     ],
   },
@@ -100,6 +126,11 @@ const projectCategories: Category[] = [
         description:
           "Performed time-series analysis on flight occupancy and ancillary passenger revenue using TSLM. Forecasted seasonal demand patterns to recommend regional market expansion opportunities and fleet utilization strategies for ultra-low-cost carriers.",
         pdf: "/pdfs/Allegiant_Demand_Revenue_Forecasting_Final.pdf",
+        images: [
+          "/project-images/allegiant-forecast_1.png",
+          "/project-images/allegiant-forecast_2.png",
+          "/project-images/allegiant-forecast_3.png",
+        ],
       },
       {
         title: "Frontier Airlines Operational Audit",
@@ -108,10 +139,48 @@ const projectCategories: Category[] = [
         description:
           "Conducted an exhaustive operational audit of carrier delay trends across major U.S. airports. Identified systemic inefficiencies in turnaround times and airport-specific bottlenecks to recommend data-driven operational improvements.",
         pdf: "/pdfs/Airline Operational Audit_Final.pdf",
+        images: [
+          "/project-images/frontier-audit_1.png",
+          "/project-images/frontier-audit_2.png",
+          "/project-images/frontier-audit_3.png",
+        ],
       },
     ],
   },
 ];
+
+function ProjectImages({ images, title }: { images: string[]; title: string }) {
+  if (!images.length) return null;
+
+  if (images.length === 1) {
+    return (
+      <div className="mb-6 rounded-xl overflow-hidden border border-border aspect-video bg-muted">
+        <img src={images[0]} alt={title} className="w-full h-full object-cover" />
+      </div>
+    );
+  }
+
+  if (images.length === 2) {
+    return (
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-52 flex gap-px bg-border">
+        {images.map((src, i) => (
+          <img key={i} src={src} alt={`${title} ${i + 1}`} className="flex-1 h-full object-cover" />
+        ))}
+      </div>
+    );
+  }
+
+  // 3 images: hero left, two stacked right
+  return (
+    <div className="mb-6 rounded-xl overflow-hidden border border-border h-56 flex gap-px bg-border">
+      <img src={images[0]} alt={`${title} 1`} className="w-2/3 h-full object-cover" />
+      <div className="w-1/3 flex flex-col gap-px">
+        <img src={images[1]} alt={`${title} 2`} className="flex-1 w-full object-cover" />
+        <img src={images[2]} alt={`${title} 3`} className="flex-1 w-full object-cover" />
+      </div>
+    </div>
+  );
+}
 
 export default function ProjectsPage() {
   return (
@@ -142,19 +211,13 @@ export default function ProjectsPage() {
 
             <div className="grid grid-cols-1 gap-6 md:gap-8">
               {section.items.map((project, i) => {
-                const cardClass =
-                  "group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-colors block";
+                const hasLink = !!project.link;
+                const hasPdf = !!project.pdf;
 
-                const cardContent = (
+                const cardInner = (
                   <>
-                    {project.image && (
-                      <div className="mb-6 rounded-xl overflow-hidden border border-border bg-muted aspect-video">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    {project.images && project.images.length > 0 && (
+                      <ProjectImages images={project.images} title={project.title} />
                     )}
 
                     {/* Industry label */}
@@ -184,12 +247,33 @@ export default function ProjectsPage() {
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {project.description}
                     </p>
-                    {project.pdf && (
-                      <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
-                        VIEW CASE STUDY{" "}
-                        <span className="group-hover:translate-x-1 transition-transform inline-block">
-                          →
-                        </span>
+
+                    {/* Footer links */}
+                    {(hasLink || hasPdf) && (
+                      <div className="mt-6 md:mt-8 flex items-center gap-6 flex-wrap">
+                        {hasLink && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center gap-1.5 text-xs font-bold text-secondary-accent hover:opacity-70 transition-opacity"
+                          >
+                            LIVE DEMO ↗
+                          </a>
+                        )}
+                        {hasPdf && (
+                          <a
+                            href={project.pdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground hover:text-secondary-accent transition-colors"
+                          >
+                            CASE STUDY{" "}
+                            <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
+                          </a>
+                        )}
                       </div>
                     )}
                   </>
@@ -201,25 +285,25 @@ export default function ProjectsPage() {
                     initial={{ opacity: 0, y: 28 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 0.5,
-                      ease: [0.22, 1, 0.36, 1],
-                      delay: i * 0.07,
-                    }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
                     whileHover={{ y: -4, zIndex: 10 }}
                     className="relative"
                   >
-                    {project.pdf ? (
+                    {/* Cards with only a PDF use the full card as a link.
+                        Cards with a live link (or both) use a div to avoid nested <a> tags. */}
+                    {!hasLink && hasPdf ? (
                       <a
                         href={project.pdf}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={cardClass}
+                        className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-colors block"
                       >
-                        {cardContent}
+                        {cardInner}
                       </a>
                     ) : (
-                      <div className={cardClass}>{cardContent}</div>
+                      <div className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-colors">
+                        {cardInner}
+                      </div>
                     )}
                   </motion.div>
                 );
