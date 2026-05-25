@@ -41,6 +41,7 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { name: 'Home', href: '/', hideOnHome: true },
     { name: 'Experience', href: '/experience' },
     { name: 'Education', href: '/education' },
     { name: 'Projects', href: '/projects' },
@@ -58,7 +59,7 @@ export default function Navbar() {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-        {navLinks.map((link) => (
+        {navLinks.filter(link => !(link.hideOnHome && pathname === '/')).map((link) => (
           <Link
             key={link.href}
             href={link.href}
@@ -145,7 +146,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 h-screen bg-background flex flex-col items-center justify-center gap-8 z-[105]"
           >
-            {navLinks.map((link) => (
+            {navLinks.filter(link => !(link.hideOnHome && pathname === '/')).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

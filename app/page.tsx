@@ -100,7 +100,7 @@ export default function Home() {
             initial="hidden"
             animate="show"
             variants={fadeUp(0)}
-            className="text-[10px] font-mono uppercase tracking-[0.35em] text-muted-foreground mb-8"
+            className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground mb-8"
           >
             Data Analytics · Product Strategy · GTM
           </motion.p>

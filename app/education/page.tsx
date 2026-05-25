@@ -18,7 +18,10 @@ const education: Education[] = [
     location: "Williamsburg, VA",
     degree: "Master of Science, Business Analytics",
     period: "Aug 2025 — May 2026",
-    highlights: ["Awarded 40% Merit-based Scholarship."],
+    highlights: [
+      "Awarded 40% Merit-based Scholarship — one of a small cohort selected across a competitive applicant pool.",
+      "Also working as a Graduate Assistant alongside the degree, supporting 3 professors across 7 courses in Statistics and Financial Management. Teaching is the fastest way to find the gaps in what you actually understand.",
+    ],
     coursework: [
       "Machine Learning",
       "Optimization",
@@ -35,7 +38,10 @@ const education: Education[] = [
     location: "Chennai, India",
     degree: "Bachelor of Technology, Computer Science & Engineering",
     period: "June 2018 — May 2022",
-    highlights: ["Minor in Big Data Analytics"],
+    highlights: [
+      "Minor in Big Data Analytics — chose it deliberately to bridge systems thinking with applied data work.",
+      "Four years building the CS foundation: algorithms, data structures, systems, databases. The analytics track is where things clicked — I cared more about what the data meant than the infrastructure running it.",
+    ],
     coursework: [
       "Machine Learning",
       "Statistics",
@@ -171,17 +177,17 @@ export default function EducationPage() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
               whileHover={{ y: -3 }}
-              className="p-5 md:p-6 bg-muted/40 border border-border rounded-2xl border-l-2 border-l-secondary-accent hover:border-secondary-accent/60 transition-colors"
+              className="p-6 md:p-8 bg-muted/40 border border-border rounded-2xl border-l-[3px] border-l-secondary-accent hover:border-secondary-accent/60 transition-colors"
             >
-              <p className="text-[10px] font-bold uppercase tracking-widest text-secondary-accent mb-2">
+              <p className="text-xs font-bold uppercase tracking-widest text-secondary-accent mb-2.5">
                 {cert.issuer}
               </p>
-              <h3 className="text-sm md:text-base font-bold text-foreground mb-4">{cert.title}</h3>
-              <div className="flex flex-wrap gap-1.5">
+              <h3 className="text-base md:text-lg font-bold text-foreground mb-4">{cert.title}</h3>
+              <div className="flex flex-wrap gap-2">
                 {cert.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 rounded-md text-[10px] font-medium border border-border text-foreground/60"
+                    className="px-3 py-1 rounded-md text-xs font-medium border border-border text-foreground/60"
                   >
                     {tag}
                   </span>
