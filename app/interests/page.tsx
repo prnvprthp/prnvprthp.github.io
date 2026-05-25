@@ -4,6 +4,29 @@ import { motion } from 'framer-motion';
 
 const interestCategories = [
   {
+    category: "Apps & Digital Products",
+    items: [
+      {
+        title: "Kinship",
+        tag: "Ancestry · Digital Archiving · Visual Storytelling",
+        description:
+          "A personal initiative to digitize and visualize generational history. Developing custom tree-rendering algorithms to map complex family structures and preserve ancestral narratives for future generations.",
+        href: "REPLACE_WITH_KINSHIP_URL",
+        cta: "VISIT SITE",
+        comingSoon: false,
+      },
+      {
+        title: "Waypoint",
+        tag: "iOS · Flight Tracking · Aviation",
+        description:
+          "A clean, minimal flight companion app inspired by Flighty and App in the Air — designed to surface what matters most about your journey: departure status, gate changes, and travel history, without the noise.",
+        href: "#",
+        cta: "COMING SOON",
+        comingSoon: true,
+      },
+    ],
+  },
+  {
     category: "Creative Pursuits",
     items: [
       {
@@ -13,19 +36,7 @@ const interestCategories = [
           "A collection of moments captured across various cities, exploring the play between natural light and urban architecture.",
         href: "/interests/photography",
         cta: "EXPLORE GALLERY",
-      },
-    ],
-  },
-  {
-    category: "Genealogy & Family History",
-    items: [
-      {
-        title: "Kinship",
-        tag: "Ancestry · Digital Archiving · Visual Storytelling",
-        description:
-          "A personal initiative to digitize and visualize generational history. Developing custom tree-rendering algorithms to map complex family structures and preserve ancestral narratives for future generations.",
-        href: "#",
-        cta: "COMING SOON",
+        comingSoon: false,
       },
     ],
   },
@@ -58,34 +69,62 @@ export default function InterestsPage() {
               {section.category}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {section.items.map((item, i) => (
-                <motion.a
-                  key={i}
-                  href={item.href}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                    delay: i * 0.08,
-                  }}
-                  whileHover={{ y: -6 }}
-                  className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors block"
-                >
-                  <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
-                    {item.tag}
-                  </p>
-                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                  <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
-                    {item.cta}{' '}
-                    <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
-                  </div>
-                </motion.a>
-              ))}
+              {section.items.map((item, i) => {
+                const inner = (
+                  <>
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+                        {item.tag}
+                      </p>
+                      {item.comingSoon && (
+                        <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-border text-muted-foreground">
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                    <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
+                      {item.cta}{' '}
+                      {!item.comingSoon && (
+                        <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                      )}
+                    </div>
+                  </>
+                );
+
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                      delay: i * 0.08,
+                    }}
+                    whileHover={!item.comingSoon ? { y: -6 } : {}}
+                  >
+                    {item.comingSoon ? (
+                      <div className="group p-8 bg-muted/40 border border-border rounded-2xl transition-colors cursor-default opacity-80">
+                        {inner}
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors block"
+                      >
+                        {inner}
+                      </a>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.section>
         ))}

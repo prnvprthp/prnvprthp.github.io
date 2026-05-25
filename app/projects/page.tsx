@@ -96,7 +96,7 @@ export default function ProjectsPage() {
               {section.category}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:gap-8">
               {section.items.map((project, i) => {
                 const cardClass =
                   "group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent hover:shadow-lg transition-colors block";
@@ -142,11 +142,6 @@ export default function ProjectsPage() {
                       delay: i * 0.07,
                     }}
                     whileHover={{ y: -4 }}
-                    className={
-                      section.items.length === 3 && i === 2
-                        ? 'md:col-span-2'
-                        : ''
-                    }
                   >
                     {project.pdf ? (
                       <a
