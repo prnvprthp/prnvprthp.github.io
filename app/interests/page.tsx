@@ -11,7 +11,7 @@ const interestCategories = [
         tag: "Ancestry · Digital Archiving · Visual Storytelling",
         description:
           "A personal initiative to digitize and visualize generational history. Developing custom tree-rendering algorithms to map complex family structures and preserve ancestral narratives for future generations.",
-        href: "REPLACE_WITH_KINSHIP_URL",
+        href: "https://kinship-bay.vercel.app",
         cta: "VISIT SITE",
         comingSoon: false,
       },
