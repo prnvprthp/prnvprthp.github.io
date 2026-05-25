@@ -33,7 +33,7 @@ const education: Education[] = [
   {
     institution: "SRM University",
     location: "Chennai, India",
-    degree: "B.Tech. Computer Science & Engineering",
+    degree: "Bachelor of Technology, Computer Science & Engineering",
     period: "June 2018 — May 2022",
     highlights: ["Minor in Big Data Analytics"],
     coursework: [
@@ -79,7 +79,7 @@ export default function EducationPage() {
         className="mb-16 md:mb-20"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Education</h1>
-        <p className="text-muted-foreground text-base">CS foundation, business analytics focus.</p>
+        <p className="text-muted-foreground text-base">CS foundation, experience with product management and GTM, business analytics, decision and strategy focus.</p>
       </motion.div>
 
       {/* Timeline */}

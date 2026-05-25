@@ -17,7 +17,6 @@ const experiences: Experience[] = [
     company: "William & Mary",
     role: "Graduate Assistant",
     period: "Feb 2026 — Present",
-    current: true,
     points: [
       "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses, supporting 3 professors in curriculum delivery and technical student support.",
       "Automating print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
@@ -37,7 +36,7 @@ const experiences: Experience[] = [
       "Directed the first USA product launch, coordinating complex timelines, resources, and multi-level approvals to ensure a successful on-schedule rollout.",
       "Integrated LLM APIs and developed client-facing embedded web components for automated Intelligent Document Processing (IDP) and quote analysis, enhancing customer self-service capabilities.",
     ],
-    stats: ["10 Days → 2 Min", "5 BRDs", "1st USA Launch"],
+    stats: ["5 BRDs", "1st USA Launch"],
     badge: "100% Salary Appraisal",
   },
   {
