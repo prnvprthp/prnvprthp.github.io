@@ -18,6 +18,7 @@
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --border: #e2e8f0;
+  --secondary-accent: #10b981; /* A subtle green */
 }
 
 /* 3. Define the variables for Dark Mode */
@@ -28,6 +29,7 @@
   --muted: #18181b;
   --muted-foreground: #a1a1aa;
   --border: #27272a;
+  --secondary-accent: #34d399; /* A subtle green for dark mode */
 }
 
 /* 4. Global Styles */

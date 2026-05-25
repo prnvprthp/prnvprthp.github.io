@@ -95,14 +95,14 @@ export default function ProjectsPage() {
                       <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
                         {project.tech}
                       </p>
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {project.description}
                       </p>
                       {project.pdf && (
-                        <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
+                        <div className="mt-6 md:mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
                           VIEW CASE STUDY <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </div>
                       )}
@@ -115,14 +115,14 @@ export default function ProjectsPage() {
                       href={project.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-all hover:-translate-y-2 block"
                     >
                       {CardContent}
                     </a>
                   ) : (
                     <div
                       key={i}
-                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl transition-all block"
+                      className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-all hover:-translate-y-2 block"
                     >
                       {CardContent}
                     </div>

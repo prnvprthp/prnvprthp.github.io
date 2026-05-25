@@ -45,18 +45,18 @@ export default function InterestsPage() {
                   <a
                     key={i}
                     href={item.href}
-                    className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/50 transition-all hover:-translate-y-2 block"
+                    className="group p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-all hover:-translate-y-2 block"
                   >
                     <p className="text-[10px] font-mono text-muted-foreground mb-3 uppercase tracking-widest">
                       {item.tag}
                     </p>
-                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {item.description}
                     </p>
-                    <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-accent transition-colors">
+                    <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
                       EXPLORE GALLERY <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                   </a>

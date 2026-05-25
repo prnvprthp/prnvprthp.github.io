@@ -62,8 +62,8 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className={`relative transition-colors duration-300 ${
-              pathname === link.href ? 'text-accent' : 'text-muted-foreground hover:text-foreground'
+            className={`relative transition-all duration-300 ${
+              pathname === link.href ? 'text-accent' : 'text-muted-foreground hover:text-secondary-accent hover:-translate-y-0.5'
             }`}
           >
             {link.name}
@@ -94,7 +94,7 @@ export default function Navbar() {
             href="/pdfs/Resume_Pranav_Prathap.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full bg-accent !text-white border border-accent hover:bg-transparent hover:!text-accent transition-all duration-300 font-bold"
+            className="px-4 py-1.5 rounded-full bg-accent !text-white border border-accent hover:bg-transparent hover:!text-secondary-accent transition-all duration-300 font-bold"
           >
             Resume
           </a>
@@ -102,7 +102,7 @@ export default function Navbar() {
             href="https://www.linkedin.com/in/prnvprthp" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-accent transition-all duration-300"
+            className="px-4 py-1.5 rounded-full border border-border text-muted-foreground hover:text-secondary-accent hover:border-secondary-accent transition-all duration-300"
           >
             LinkedIn
           </a>
