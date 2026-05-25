@@ -149,55 +149,67 @@ const projectCategories: Category[] = [
   },
 ];
 
+/** Wrap every <img> in a sized div so flex/grid dimensions are applied to the
+ *  container, then the image fills it with object-cover. Direct <img> flex
+ *  children ignore flex height constraints and render at natural pixel size. */
+function Thumb({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative overflow-hidden flex-1 min-w-0 min-h-0">
+      <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+    </div>
+  );
+}
+
 function ProjectImages({ images, title }: { images: string[]; title: string }) {
   if (!images.length) return null;
 
+  const gap = "var(--border)";
+
   if (images.length === 1) {
     return (
-      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 bg-muted">
-        <img src={images[0]} alt={title} className="w-full h-full object-cover" />
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 relative bg-muted">
+        <img src={images[0]} alt={title} className="absolute inset-0 w-full h-full object-cover" />
       </div>
     );
   }
 
   if (images.length === 2) {
     return (
-      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 flex gap-px" style={{ background: "var(--border)" }}>
-        {images.map((src, i) => (
-          <img key={i} src={src} alt={`${title} ${i + 1}`} className="flex-1 h-full object-cover" />
-        ))}
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-44 flex gap-px" style={{ background: gap }}>
+        {images.map((src, i) => <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />)}
       </div>
     );
   }
 
   if (images.length === 3) {
-    // Magazine: hero left (2/3), two stacked right (1/3)
     return (
-      <div className="mb-6 rounded-xl overflow-hidden border border-border h-52 flex gap-px" style={{ background: "var(--border)" }}>
-        <img src={images[0]} alt={`${title} 1`} className="w-2/3 h-full object-cover" />
-        <div className="w-1/3 flex flex-col gap-px">
-          <img src={images[1]} alt={`${title} 2`} className="flex-1 w-full object-cover" />
-          <img src={images[2]} alt={`${title} 3`} className="flex-1 w-full object-cover" />
+      <div className="mb-6 rounded-xl overflow-hidden border border-border h-52 flex gap-px" style={{ background: gap }}>
+        {/* Hero: 2/3 width */}
+        <div className="relative overflow-hidden" style={{ flex: "0 0 66.666%" }}>
+          <img src={images[0]} alt={`${title} 1`} className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        {/* Two stacked: 1/3 width */}
+        <div className="flex flex-col gap-px" style={{ flex: "0 0 33.333%" }}>
+          <div className="relative overflow-hidden flex-1">
+            <img src={images[1]} alt={`${title} 2`} className="absolute inset-0 w-full h-full object-cover" />
+          </div>
+          <div className="relative overflow-hidden flex-1">
+            <img src={images[2]} alt={`${title} 3`} className="absolute inset-0 w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     );
   }
 
-  // 4+ images: two rows of equal columns
+  // 4+ images: two equal rows
   const half = Math.ceil(images.length / 2);
-  const top = images.slice(0, half);
-  const bottom = images.slice(half);
   return (
-    <div className="mb-6 rounded-xl overflow-hidden border border-border flex flex-col gap-px" style={{ background: "var(--border)" }}>
+    <div className="mb-6 rounded-xl overflow-hidden border border-border flex flex-col gap-px" style={{ background: gap }}>
       <div className="flex gap-px h-36">
-        {top.map((src, i) => (
-          <img key={i} src={src} alt={`${title} ${i + 1}`} className="flex-1 h-full object-cover" />
-        ))}
+        {images.slice(0, half).map((src, i) => <Thumb key={i} src={src} alt={`${title} ${i + 1}`} />)}
       </div>
       <div className="flex gap-px h-36">
-        {bottom.map((src, i) => (
-          <img key={i} src={src} alt={`${title} ${half + i + 1}`} className="flex-1 h-full object-cover" />
-        ))}
+        {images.slice(half).map((src, i) => <Thumb key={i} src={src} alt={`${title} ${half + i + 1}`} />)}
       </div>
     </div>
   );
