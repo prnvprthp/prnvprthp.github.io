@@ -16,7 +16,7 @@ const experiences: Experience[] = [
   {
     company: "William & Mary",
     role: "Graduate Assistant",
-    period: "Feb 2026 — Present",
+    period: "Feb 2026 toPresent",
     points: [
       "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses, supporting 3 professors in curriculum delivery and technical student support.",
       "Automating print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
@@ -27,7 +27,7 @@ const experiences: Experience[] = [
   {
     company: "INSILLION",
     role: "Product Marketing & Management",
-    period: "Jan 2023 — July 2025",
+    period: "Jan 2023 toJuly 2025",
     points: [
       "Built predictive fit/gap models assessing market risk, competition, and adoption trends to inform global expansion strategy and product-market fit.",
       "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development.",
@@ -42,7 +42,7 @@ const experiences: Experience[] = [
   {
     company: "Anheuser-Busch InBev",
     role: "Research Analyst",
-    period: "May 2021 — Jan 2022",
+    period: "May 2021 toJan 2022",
     points: [
       "Identified critical internal workflow inefficiencies within the Beer-Garage division and delivered data-driven improvements that optimized operational throughput.",
       "Crafted comprehensive 3-year, research-driven strategic plans to guide long-term business priorities and capitalize on emerging global market trends.",

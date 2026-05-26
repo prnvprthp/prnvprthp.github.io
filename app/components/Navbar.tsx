@@ -42,11 +42,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/', hideOnHome: true },
-    { name: 'About', href: '/about' },
     { name: 'Experience', href: '/experience' },
     { name: 'Education', href: '/education' },
     { name: 'Projects', href: '/projects' },
     { name: 'Interests', href: '/interests' },
+    { name: 'About', href: '/about' },
   ];
 
   return (

@@ -4,12 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ensure we skip checks on the server
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 };
 

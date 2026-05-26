@@ -19,7 +19,7 @@ const interestCategories = [
         title: "Waypoint",
         tag: "iOS · Flight Tracking · Aviation",
         description:
-          "A clean, minimal flight companion app inspired by Flighty and App in the Air — designed to surface what matters most about your journey: departure status, gate changes, and travel history, without the noise.",
+          "A clean, minimal flight companion app inspired by Flighty and App in the Air, designed to surface what matters most about your journey: departure status, gate changes, and travel history, without the noise.",
         href: "#",
         cta: "COMING SOON",
         comingSoon: true,
@@ -52,7 +52,7 @@ export default function InterestsPage() {
       >
         <h1 className="text-4xl font-bold mb-4 text-foreground">Interests</h1>
         <p className="text-muted-foreground mb-16 max-w-xl">
-          Beyond data and strategy — exploring the intersections of creativity, culture, and visual storytelling.
+          Beyond data and strategy, exploring the intersections of creativity, culture, and visual storytelling.
         </p>
       </motion.div>
 

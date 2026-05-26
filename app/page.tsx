@@ -122,7 +122,7 @@ export default function Home() {
             variants={fadeUp(0.2)}
             className="text-base md:text-lg text-muted-foreground max-w-md mx-auto leading-relaxed mb-10"
           >
-            MSBA @ William &amp; Mary — building at the intersection of{" "}
+            MSBA @ William &amp; Mary, building at the intersection of{" "}
             <span className="text-accent font-medium">data architecture</span>{" "}
             and{" "}
             <span className="text-accent font-medium">

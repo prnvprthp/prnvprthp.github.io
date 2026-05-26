@@ -17,9 +17,9 @@ const education: Education[] = [
     institution: "William & Mary",
     location: "Williamsburg, VA",
     degree: "Master of Science, Business Analytics",
-    period: "Aug 2025 — May 2026",
+    period: "Aug 2025 to May 2026",
     highlights: [
-      "Awarded 40% Merit-based Scholarship — one of a small cohort selected across a competitive applicant pool.",
+      "Awarded 40% Merit-based Scholarship, one of a small cohort selected across a competitive applicant pool.",
       "Also working as a Graduate Assistant alongside the degree, supporting 3 professors across 7 courses in Statistics and Financial Management. Teaching is the fastest way to find the gaps in what you actually understand.",
     ],
     coursework: [
@@ -37,10 +37,10 @@ const education: Education[] = [
     institution: "SRM University",
     location: "Chennai, India",
     degree: "Bachelor of Technology, Computer Science & Engineering",
-    period: "June 2018 — May 2022",
+    period: "June 2018 to May 2022",
     highlights: [
-      "Minor in Big Data Analytics — chose it deliberately to bridge systems thinking with applied data work.",
-      "Four years building the CS foundation: algorithms, data structures, systems, databases. The analytics track is where things clicked — I cared more about what the data meant than the infrastructure running it.",
+      "Minor in Big Data Analytics, chosen deliberately to bridge systems thinking with applied data work.",
+      "Four years building the CS foundation: algorithms, data structures, systems, databases. The analytics track is where things clicked. I cared more about what the data meant than the infrastructure running it.",
     ],
     coursework: [
       "Machine Learning",

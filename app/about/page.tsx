@@ -14,15 +14,15 @@ const fadeUp = (delay = 0) => ({
 const pillars = [
   {
     title: "Predictive & Statistical Modeling",
-    body: "From patient churn correlations to Monte Carlo investment simulations, I build models that look beyond static forecasts — designed around uncertainty, edge cases, and explainability. SHAP values, sensitivity analysis, and interpretability aren't afterthoughts; they're how I make sure the output actually gets used.",
+    body: "From patient churn correlations to Monte Carlo investment simulations, I build models that look beyond static forecasts, designed around uncertainty, edge cases, and explainability. SHAP values, sensitivity analysis, and interpretability aren't afterthoughts; they're how I make sure the output actually gets used.",
   },
   {
     title: "Data Systems & ETL Automation",
-    body: "I design warehouse schemas and automate ingestion pipelines using Python, SQL, R, and Alteryx. Data quality is treated as a first-class requirement, not a cleanup task. If a downstream report is wrong, the root cause is almost always upstream — and I try to fix it there.",
+    body: "I design warehouse schemas and automate ingestion pipelines using Python, SQL, R, and Alteryx. Data quality is treated as a first-class requirement, not a cleanup task. If a downstream report is wrong, the root cause is almost always upstream. That's where I try to fix it.",
   },
   {
     title: "Cross-Functional Strategy",
-    body: "I've spent a lot of time navigating the gap between what engineers build and what executives need to decide. Authoring BRDs, running GTM launches, and bridging legal, technical, and business stakeholders has taught me that the clearest communicator in the room usually wins — regardless of who has the best model.",
+    body: "I've spent a lot of time navigating the gap between what engineers build and what executives need to decide. Authoring BRDs, running GTM launches, and bridging legal, technical, and business stakeholders has taught me that the clearest communicator in the room usually wins, regardless of who has the best model.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
           I sit at the intersection of data engineering, predictive analytics, and business strategy.
           I love diving into complex, messy datasets and turning them into clear, actionable roadmaps
-          that drive executive decisions — and I care just as much about whether the insight actually
+          that drive executive decisions. I care just as much about whether the insight actually
           gets acted on as I do about building it.
         </p>
       </motion.div>
@@ -50,10 +50,10 @@ export default function AboutPage() {
         initial="hidden"
         animate="show"
         variants={fadeUp(0.1)}
-        className="text-sm md:text-base text-muted-foreground leading-relaxed mb-16 md:mb-20"
+        className="text-base md:text-lg text-muted-foreground leading-relaxed mb-16 md:mb-20"
       >
         Whether I'm building machine learning models, automating tedious workflows, or launching a
-        product in a new market, my goal is always the same — to create reliable, data-driven systems
+        product in a new market, my goal is always the same: to create reliable, data-driven systems
         that organizations can actually trust and use.
       </motion.p>
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
             My background started firmly in the technical realm. I earned a B.Tech. in Computer
             Science & Engineering with a minor in Big Data Analytics from SRM University. I enjoyed
             the pure engineering side, but I kept gravitating toward the problems that sat just
-            outside the codebase — the strategic questions, the operational bottlenecks, the places
+            outside the codebase: the strategic questions, the operational bottlenecks, the places
             where better data could actually change a decision.
           </p>
           <p>
@@ -79,14 +79,14 @@ export default function AboutPage() {
             half years in product strategy across global markets. I built fit/gap predictive models,
             rebuilt the pre-sales CRM from scratch, authored BRDs that aligned engineering with
             executive priorities, and eventually directed the company's first product launch in the
-            United States. I also got to integrate LLM APIs for automated document processing — one
-            of the more technically exciting threads I've pulled on professionally.
+            United States. I also got to integrate LLM APIs for automated document processing, which
+            turned out to be one of the more technically exciting threads I've pulled on professionally.
           </p>
           <p>
             Before that, at{" "}
             <span className="text-foreground font-medium">Anheuser-Busch InBev</span>, I worked as a
-            Research Analyst inside the Beer-Garage division — tracking down operational
-            inefficiencies and leading international pilot rollouts across Europe and Sub-Saharan
+            Research Analyst inside the Beer-Garage division, where I tracked down operational
+            inefficiencies and led international pilot rollouts across Europe and Sub-Saharan
             Africa. That experience taught me what "move fast" actually means when the stakes are
             real and the timelines are fixed.
           </p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
             <span className="text-foreground font-medium">
               M.S. in Business Analytics at William & Mary
             </span>{" "}
-            — on a 40% merit scholarship — while serving as a Graduate Assistant supporting three
+            on a 40% merit scholarship, while serving as a Graduate Assistant supporting three
             professors across seven courses in Statistics and Financial Management. The coursework is
             dense (stochastic modeling, deep learning, optimization), but honestly the most useful
             thing has been teaching. Explaining complex concepts to undergrads forces you to actually
@@ -142,7 +142,7 @@ export default function AboutPage() {
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
           Always open to collaborating on market strategy, data-driven risk analysis, or automation.
           If you want to talk data, swap notes on emerging tech, or discuss cross-continental product
-          rollouts — reach out.
+          rollouts, reach out.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
