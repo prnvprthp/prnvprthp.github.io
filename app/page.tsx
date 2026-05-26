@@ -205,10 +205,10 @@ export default function Home() {
             className="mt-12 flex justify-start"
           >
             <Link
-              href="/projects"
+              href="/experience"
               className="px-6 py-2.5 rounded-full bg-accent text-white font-bold text-sm hover:opacity-85 transition-opacity"
             >
-              View Projects →
+              View Experience →
             </Link>
           </motion.div>
         </motion.div>
