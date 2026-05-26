@@ -76,27 +76,33 @@ export default function AboutPage() {
           </p>
           <p>
             That pull took me to{" "}
-            <span className="text-foreground font-medium">INSILLION</span>, where I spent two and a
-            half years in product strategy across global markets. I built fit/gap predictive models,
+            <span className="italic">INSILLION</span>, where I spent two and a
+            half years in product strategy across global markets. I built{" "}
+            <span className="font-semibold text-foreground">fit/gap predictive models</span>,
             rebuilt the pre-sales CRM from scratch, authored BRDs that aligned engineering with
-            executive priorities, and eventually directed the company's first product launch in the
-            United States. I also got to integrate LLM APIs for automated document processing, which
+            executive priorities, and eventually directed the company's{" "}
+            <span className="font-semibold text-foreground">first product launch in the United States</span>.
+            I also got to integrate{" "}
+            <span className="font-semibold text-foreground">LLM APIs</span> for automated document processing, which
             turned out to be one of the more technically exciting threads I've pulled on professionally.
           </p>
           <p>
             Before that, at{" "}
-            <span className="text-foreground font-medium">Anheuser-Busch InBev</span>, I worked as a
+            <span className="italic">Anheuser-Busch InBev</span>, I worked as a
             Research Analyst inside the Beer-Garage division, where I tracked down operational
-            inefficiencies and led international pilot rollouts across Europe and Sub-Saharan
-            Africa. That experience taught me what "move fast" actually means when the stakes are
+            inefficiencies and led{" "}
+            <span className="font-semibold text-foreground">international pilot rollouts across Europe and Sub-Saharan Africa</span>.
+            That experience taught me what "move fast" actually means when the stakes are
             real and the timelines are fixed.
           </p>
           <p>
             Right now, I'm completing my{" "}
-            <span className="text-foreground font-medium">
+            <span className="italic">
               M.S. in Business Analytics at William & Mary
             </span>{" "}
-            on a 40% merit scholarship, while serving as a Graduate Assistant supporting three
+            on a{" "}
+            <span className="font-semibold text-foreground">40% merit scholarship</span>, while serving as a{" "}
+            <span className="font-semibold text-foreground">Graduate Assistant</span> supporting three
             professors across seven courses in Statistics and Financial Management. The coursework is
             dense (stochastic modeling, deep learning, optimization), but honestly the most useful
             thing has been teaching. Explaining complex concepts to undergrads forces you to actually

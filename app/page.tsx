@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
   },
 });
 
-const stats = ["MSBA · W&M", "3 yrs Industry", "7 Analytics Projects"];
+const stats = ["MS in Business Analytics · W&M", "3 yrs Industry", "7 Analytics Projects"];
 
 const competencies = [
   {
@@ -95,7 +95,7 @@ export default function Home() {
             variants={fadeUp(0.2)}
             className="text-base md:text-lg text-muted-foreground max-w-md mx-auto leading-relaxed mb-10"
           >
-            MSBA @ William &amp; Mary, building at the intersection of{" "}
+            MS in Business Analytics @ William &amp; Mary, building at the intersection of{" "}
             <span className="text-accent font-medium">data architecture</span>{" "}
             and{" "}
             <span className="text-accent font-medium">
