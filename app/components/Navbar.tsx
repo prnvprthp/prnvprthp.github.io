@@ -46,7 +46,7 @@ export default function Navbar() {
     { name: 'Education', href: '/education' },
     { name: 'Projects', href: '/projects' },
     { name: 'Interests', href: '/interests' },
-    { name: 'About', href: '/about' },
+    { name: 'About Me', href: '/about' },
   ];
 
   return (

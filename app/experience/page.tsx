@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { NextPage } from '@/app/components/NextPage';
 
 type Experience = {
   company: string;
@@ -134,6 +135,7 @@ export default function ExperiencePage() {
           ))}
         </div>
       </div>
+      <NextPage current="/experience" />
     </main>
   );
 }

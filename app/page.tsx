@@ -154,16 +154,16 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-4"
           >
             <Link
-              href="/projects"
+              href="/experience"
               className="px-6 py-2.5 rounded-full bg-accent text-white font-bold text-sm hover:opacity-85 transition-opacity"
             >
-              View Projects →
+              View Experience →
             </Link>
             <Link
-              href="/experience"
+              href="/about"
               className="px-6 py-2.5 rounded-full border border-border text-muted-foreground font-bold text-sm hover:text-foreground hover:border-foreground/30 transition-all"
             >
-              Experience
+              About Me
             </Link>
           </motion.div>
         </div>
@@ -242,6 +242,22 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* View Projects CTA — after competencies so users read this first */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="mt-12 flex justify-start"
+          >
+            <Link
+              href="/projects"
+              className="px-6 py-2.5 rounded-full bg-accent text-white font-bold text-sm hover:opacity-85 transition-opacity"
+            >
+              View Projects →
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 

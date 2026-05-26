@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { NextPage } from "@/app/components/NextPage";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 16 },
@@ -162,6 +163,7 @@ export default function AboutPage() {
         </div>
       </motion.div>
 
+      <NextPage current="/about" />
     </main>
   );
 }

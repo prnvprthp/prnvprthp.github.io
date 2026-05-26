@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { NextPage } from '@/app/components/NextPage';
 
 const interestCategories = [
   {
@@ -129,6 +130,7 @@ export default function InterestsPage() {
           </motion.section>
         ))}
       </div>
+      <NextPage current="/interests" />
     </main>
   );
 }

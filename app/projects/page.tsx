@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Tooltip } from "@/app/components/Tooltip";
+import { NextPage } from "@/app/components/NextPage";
 
 const techTooltips: Record<string, string> = {
   "XGBoost": "Gradient boosting algorithm with high accuracy on tabular data, industry standard for ML competitions",
@@ -345,6 +346,7 @@ export default function ProjectsPage() {
           </motion.section>
         ))}
       </div>
+      <NextPage current="/projects" />
     </main>
   );
 }

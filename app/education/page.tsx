@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { NextPage } from '@/app/components/NextPage';
 
 type Education = {
   institution: string;
@@ -197,6 +198,7 @@ export default function EducationPage() {
           ))}
         </div>
       </motion.div>
+      <NextPage current="/education" />
     </main>
   );
 }
