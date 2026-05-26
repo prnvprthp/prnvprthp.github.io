@@ -14,33 +14,6 @@ const fadeUp = (delay = 0) => ({
 
 const stats = ["MSBA · W&M", "3 yrs Industry", "7 Analytics Projects"];
 
-const techStack = [
-  {
-    category: "Languages",
-    tools: ["Python", "R", "SQL", "JavaScript"],
-  },
-  {
-    category: "Machine Learning",
-    tools: ["XGBoost", "Random Forest", "Logistic Regression", "SHAP", "SMOTE", "K-Means", "Scikit-learn"],
-  },
-  {
-    category: "Data & Statistics",
-    tools: ["Monte Carlo Simulation", "Time Series (TSLM)", "Tidyverse", "Brownian Motion", "Pandas", "NumPy"],
-  },
-  {
-    category: "Visualization & BI",
-    tools: ["Tableau", "Plotly", "Dash", "ggplot2", "Matplotlib"],
-  },
-  {
-    category: "Infrastructure & APIs",
-    tools: ["PostgreSQL", "Data Warehousing", "FRED API", "LLM APIs", "ETL Pipelines"],
-  },
-  {
-    category: "Tools & Platforms",
-    tools: ["Microsoft 365", "Google Workspace", "CRM Systems", "Excel", "Git"],
-  },
-];
-
 const competencies = [
   {
     area: "Data & Analytics",
@@ -135,7 +108,7 @@ export default function Home() {
             initial="hidden"
             animate="show"
             variants={fadeUp(0.3)}
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-3"
           >
             {stats.map((stat) => (
               <span
@@ -145,26 +118,6 @@ export default function Home() {
                 {stat}
               </span>
             ))}
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp(0.4)}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <Link
-              href="/experience"
-              className="px-6 py-2.5 rounded-full bg-accent text-white font-bold text-sm hover:opacity-85 transition-opacity"
-            >
-              View Experience →
-            </Link>
-            <Link
-              href="/about"
-              className="px-6 py-2.5 rounded-full border border-border text-muted-foreground font-bold text-sm hover:text-foreground hover:border-foreground/30 transition-all"
-            >
-              About Me
-            </Link>
           </motion.div>
         </div>
 
@@ -201,7 +154,7 @@ export default function Home() {
       </main>
 
       {/* ── Competencies ──────────────────────────────── */}
-      <section className="pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="pb-28 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -243,7 +196,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* View Projects CTA — after competencies so users read this first */}
+          {/* View Projects CTA */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -258,46 +211,6 @@ export default function Home() {
               View Projects →
             </Link>
           </motion.div>
-        </motion.div>
-      </section>
-
-      {/* ── Tech Stack ────────────────────────────────── */}
-      <section className="pb-28 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="border-t border-border pt-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
-            Tools &amp; Technologies
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-10">
-            {techStack.map((group, i) => (
-              <motion.div
-                key={group.category}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
-              >
-                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                  {group.category}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {group.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="px-3 py-1.5 rounded-md text-xs font-medium border border-border text-foreground/70 hover:border-secondary-accent hover:text-secondary-accent transition-all duration-200 cursor-default"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </section>
     </>
