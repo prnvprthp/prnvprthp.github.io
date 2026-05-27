@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
+import { CursorGlow } from "@/app/components/CursorGlow";
 
 export const metadata: Metadata = {
   title: "Pranav Prathap | Portfolio",
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-background text-foreground" suppressHydrationWarning>
+        <CursorGlow />
         <Navbar />
         {/* This wrapper ensures content isn't hidden under the Navbar */}
         <div className="relative z-10">

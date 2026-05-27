@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const pages = [
   { name: "Experience",  href: "/experience", blurb: "Work history and industry roles" },
-  { name: "Education",   href: "/education",  blurb: "Degrees, coursework, and certifications" },
   { name: "Projects",    href: "/projects",   blurb: "Analytics and data work" },
+  { name: "Education",   href: "/education",  blurb: "Degrees, coursework, and certifications" },
   { name: "Interests",   href: "/interests",  blurb: "What I build and explore outside of work" },
   { name: "About Me",    href: "/about",      blurb: "The full story" },
 ];

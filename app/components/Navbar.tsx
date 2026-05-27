@@ -43,8 +43,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/', hideOnHome: true },
     { name: 'Experience', href: '/experience' },
-    { name: 'Education', href: '/education' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Education', href: '/education' },
     { name: 'Interests', href: '/interests' },
     { name: 'About Me', href: '/about' },
   ];
