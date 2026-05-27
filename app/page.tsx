@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────── */}
-      <main className="relative flex min-h-screen flex-col items-center justify-center px-6 py-20 overflow-hidden">
+      <main className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 py-20 overflow-hidden">
         {/* Ambient glow */}
         <div
           aria-hidden="true"
@@ -144,7 +144,7 @@ export default function Home() {
             bottom: 0,
             left: 0,
             right: 0,
-            height: "160px",
+            height: "200px",
             background: "linear-gradient(to bottom, transparent 0%, var(--background) 100%)",
             pointerEvents: "none",
             zIndex: 10,
