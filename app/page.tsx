@@ -133,36 +133,23 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Bottom gradient fade — signals more content below */}
         <motion.div
+          aria-hidden="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5"
-        >
-          <span className="text-xs font-medium tracking-widest text-muted-foreground">
-            Scroll to explore
-          </span>
-          {/* Mouse shell */}
-          <div className="w-[28px] h-[44px] rounded-full border-2 border-muted-foreground/60 flex items-start justify-center pt-[7px]">
-            <motion.div
-              className="w-[4px] h-[8px] rounded-full bg-accent"
-              animate={{ y: [0, 14, 0], opacity: [1, 0.15, 1] }}
-              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            />
-          </div>
-          {/* Chevron below mouse */}
-          <motion.svg
-            width="16" height="16" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" strokeWidth="2.5"
-            strokeLinecap="round" strokeLinejoin="round"
-            className="text-muted-foreground/70"
-            animate={{ y: [0, 4, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-          >
-            <path d="m6 9 6 6 6-6" />
-          </motion.svg>
-        </motion.div>
+          transition={{ delay: 1.0, duration: 1.2 }}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "160px",
+            background: "linear-gradient(to bottom, transparent 0%, var(--background) 100%)",
+            pointerEvents: "none",
+            zIndex: 10,
+          }}
+        />
       </main>
 
       {/* ── Competencies ──────────────────────────────── */}
@@ -190,13 +177,13 @@ export default function Home() {
               >
                 {/* Left: number + title + tagline */}
                 <div>
-                  <span className="text-[10px] font-mono text-accent/50 tracking-widest mb-2 block">
+                  <span className="text-xs font-mono text-accent/50 tracking-widest mb-2 block">
                     {block.num}
                   </span>
-                  <h3 className="text-sm md:text-base font-bold text-foreground group-hover:text-accent transition-colors duration-200 mb-1.5">
+                  <h3 className="text-base md:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-200 mb-1.5">
                     {block.area}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {block.tagline}
                   </p>
                 </div>
@@ -206,7 +193,7 @@ export default function Home() {
                   {block.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-md text-xs border border-border text-foreground/65"
+                      className="px-3.5 py-1.5 rounded-md text-sm border border-border text-foreground/65"
                     >
                       {skill}
                     </span>
