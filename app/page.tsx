@@ -16,30 +16,42 @@ const stats = ["MS in Business Analytics · W&M", "3 yrs Industry", "7 Analytics
 
 const competencies = [
   {
+    num: "01",
     area: "Data & Analytics",
+    tagline: "From raw data to reliable insight",
     skills: [
       "Predictive Modeling",
       "Statistical Analysis",
-      "Model Explainability",
+      "Model Explainability (SHAP)",
       "Data Visualization",
+      "ETL & Pipelines",
+      "Clustering & Segmentation",
     ],
   },
   {
+    num: "02",
     area: "Product & Strategy",
+    tagline: "From insight to market action",
     skills: [
       "Go-to-Market Strategy",
       "Market Research",
       "BRD Authorship",
       "Product Launches",
+      "Stakeholder Alignment",
+      "Competitive Analysis",
     ],
   },
   {
+    num: "03",
     area: "Technical Execution",
+    tagline: "The infrastructure behind the output",
     skills: [
       "SQL & Data Warehousing",
       "Python · R",
       "Dashboard Development",
       "CRM & Workflow Automation",
+      "LLM API Integration",
+      "Alteryx",
     ],
   },
 ];
@@ -165,33 +177,47 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             Core Competencies
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {competencies.map((block, i) => (
               <motion.div
                 key={block.area}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
                   ease: [0.22, 1, 0.36, 1],
                   delay: i * 0.1,
                 }}
+                className="p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/30 transition-colors"
               >
-                <h3 className="text-base font-bold text-foreground mb-4">
-                  {block.area}
-                </h3>
-                <ul className="space-y-2.5">
+                {/* Header row */}
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-base font-bold text-foreground">
+                    {block.area}
+                  </h3>
+                  <span className="text-[10px] font-mono font-bold text-accent/40 mt-0.5">
+                    {block.num}
+                  </span>
+                </div>
+
+                {/* Tagline */}
+                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
+                  {block.tagline}
+                </p>
+
+                {/* Skill pills */}
+                <div className="flex flex-wrap gap-2">
                   {block.skills.map((skill) => (
-                    <li
+                    <span
                       key={skill}
-                      className="flex items-center gap-3 text-sm text-foreground/70"
+                      className="px-3 py-1 rounded-md text-xs font-medium border border-border text-foreground/70"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-accent/70" />
                       {skill}
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </motion.div>
             ))}
           </div>
