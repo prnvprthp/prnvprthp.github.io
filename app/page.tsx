@@ -80,23 +80,6 @@ export default function Home() {
           }}
         />
 
-        {/* Bottom glow — fades naturally via its own radial gradient, acting as the scroll hint */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            bottom: "-60px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "1000px",
-            height: "340px",
-            background:
-              "radial-gradient(ellipse at center, var(--accent) 0%, transparent 65%)",
-            opacity: 0.22,
-            pointerEvents: "none",
-            zIndex: 0,
-          }}
-        />
 
         <div className="relative z-10 text-center max-w-2xl w-full">
           <motion.p
