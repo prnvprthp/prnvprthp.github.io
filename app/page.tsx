@@ -174,45 +174,39 @@ export default function Home() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="border-t border-border pt-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
             Core Competencies
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+          <div className="divide-y divide-border">
             {competencies.map((block, i) => (
               <motion.div
                 key={block.area}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: i * 0.1,
-                }}
-                className="p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-accent/30 transition-colors"
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.09 }}
+                className="group grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-16 py-8 md:py-10"
               >
-                {/* Header row */}
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-base font-bold text-foreground">
-                    {block.area}
-                  </h3>
-                  <span className="text-[10px] font-mono font-bold text-accent/40 mt-0.5">
+                {/* Left: number + title + tagline */}
+                <div>
+                  <span className="text-[10px] font-mono text-accent/50 tracking-widest mb-2 block">
                     {block.num}
                   </span>
+                  <h3 className="text-sm md:text-base font-bold text-foreground group-hover:text-accent transition-colors duration-200 mb-1.5">
+                    {block.area}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {block.tagline}
+                  </p>
                 </div>
 
-                {/* Tagline */}
-                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
-                  {block.tagline}
-                </p>
-
-                {/* Skill pills */}
-                <div className="flex flex-wrap gap-2">
+                {/* Right: skill chips */}
+                <div className="flex flex-wrap gap-2 content-start">
                   {block.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-md text-xs font-medium border border-border text-foreground/70"
+                      className="px-3 py-1 rounded-md text-xs border border-border text-foreground/65"
                     >
                       {skill}
                     </span>
