@@ -74,7 +74,7 @@ export default function Home() {
             borderRadius: "50%",
             background:
               "radial-gradient(ellipse at center, var(--accent) 0%, transparent 70%)",
-            opacity: 0.07,
+            opacity: 0.14,
             pointerEvents: "none",
             zIndex: 0,
           }}
