@@ -61,7 +61,7 @@ export default function Home() {
     <>
       {/* ── Hero ──────────────────────────────────────── */}
       <main className="relative flex min-h-[68vh] flex-col items-center justify-center px-6 py-20 overflow-hidden">
-        {/* Ambient glow */}
+        {/* Ambient glow — hero center */}
         <div
           aria-hidden="true"
           style={{
@@ -75,6 +75,25 @@ export default function Home() {
             background:
               "radial-gradient(ellipse at center, var(--accent) 0%, transparent 70%)",
             opacity: 0.07,
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        {/* Bottom glow — gives the gradient something to fade through */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: "-60px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "800px",
+            height: "320px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(ellipse at center, var(--accent) 0%, transparent 65%)",
+            opacity: 0.09,
             pointerEvents: "none",
             zIndex: 0,
           }}
