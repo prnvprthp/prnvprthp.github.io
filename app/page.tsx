@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────── */}
-      <main className="relative flex min-h-[68vh] flex-col items-center justify-center px-6 py-20 overflow-hidden">
+      <main className="relative flex min-h-[62vh] flex-col items-center justify-center px-6 py-20 overflow-visible">
         {/* Ambient glow — hero center */}
         <div
           aria-hidden="true"
@@ -80,22 +80,21 @@ export default function Home() {
           }}
         />
 
-        {/* Bottom glow — gives the gradient something to dissolve through */}
+        {/* Bottom glow — fades naturally via its own radial gradient, acting as the scroll hint */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            bottom: 0,
+            bottom: "-60px",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "900px",
-            height: "380px",
-            borderRadius: "50%",
+            width: "1000px",
+            height: "340px",
             background:
               "radial-gradient(ellipse at center, var(--accent) 0%, transparent 65%)",
-            opacity: 0.18,
+            opacity: 0.22,
             pointerEvents: "none",
-            zIndex: 1,
+            zIndex: 0,
           }}
         />
 
@@ -152,23 +151,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Bottom gradient fade — signals more content below */}
-        <motion.div
-          aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 1.2 }}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: "280px",
-            background: "linear-gradient(to bottom, transparent 0%, var(--background) 75%)",
-            pointerEvents: "none",
-            zIndex: 5,
-          }}
-        />
       </main>
 
       {/* ── Competencies ──────────────────────────────── */}
