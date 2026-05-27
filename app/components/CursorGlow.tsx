@@ -12,7 +12,10 @@ export function CursorGlow() {
   const springY = useSpring(mouseY, { stiffness: 120, damping: 22, mass: 0.5 });
 
   useEffect(() => {
-    const SIZE = 350;
+    // Don't track on touch-only devices — no cursor exists
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    const SIZE = 260;
     const HALF = SIZE / 2;
 
     const onMove = (e: MouseEvent) => {
@@ -27,18 +30,19 @@ export function CursorGlow() {
   return (
     <motion.div
       aria-hidden="true"
+      className="hidden md:block"
       style={{
         x: springX,
         y: springY,
         position: "fixed",
         top: 0,
         left: 0,
-        width: "350px",
-        height: "350px",
+        width: "260px",
+        height: "260px",
         borderRadius: "50%",
         background:
           "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
-        opacity: 0.07,
+        opacity: 0.11,
         pointerEvents: "none",
         zIndex: 9998,
         willChange: "transform",
