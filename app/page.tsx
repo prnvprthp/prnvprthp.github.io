@@ -80,22 +80,22 @@ export default function Home() {
           }}
         />
 
-        {/* Bottom glow — gives the gradient something to fade through */}
+        {/* Bottom glow — gives the gradient something to dissolve through */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            bottom: "-60px",
+            bottom: 0,
             left: "50%",
             transform: "translateX(-50%)",
-            width: "800px",
-            height: "320px",
+            width: "900px",
+            height: "380px",
             borderRadius: "50%",
             background:
               "radial-gradient(ellipse at center, var(--accent) 0%, transparent 65%)",
-            opacity: 0.09,
+            opacity: 0.18,
             pointerEvents: "none",
-            zIndex: 0,
+            zIndex: 1,
           }}
         />
 
@@ -163,10 +163,10 @@ export default function Home() {
             bottom: 0,
             left: 0,
             right: 0,
-            height: "260px",
-            background: "linear-gradient(to bottom, transparent 0%, var(--background) 80%)",
+            height: "280px",
+            background: "linear-gradient(to bottom, transparent 0%, var(--background) 75%)",
             pointerEvents: "none",
-            zIndex: 10,
+            zIndex: 5,
           }}
         />
       </main>
