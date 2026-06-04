@@ -110,8 +110,8 @@ export default function EducationPage() {
               />
 
               {/* Header */}
-              <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1.5 mb-4">
-                <div>
+              <div className="flex items-start justify-between gap-x-4 gap-y-1.5 mb-4">
+                <div className="min-w-0">
                   <div className="flex items-center gap-2.5 flex-wrap">
                     <h2 className="text-xl md:text-2xl font-bold text-foreground">{edu.degree}</h2>
                     {edu.badge && (
