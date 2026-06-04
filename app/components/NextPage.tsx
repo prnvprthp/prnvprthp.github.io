@@ -32,7 +32,7 @@ export function NextPage({ current }: { current: string }) {
           {/* Ambient glow in the corner */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full"
+            className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 rounded-full"
             style={{
               background:
                 "radial-gradient(circle at center, var(--accent) 0%, transparent 70%)",
