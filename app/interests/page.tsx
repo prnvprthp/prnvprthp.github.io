@@ -86,8 +86,8 @@ export default function InterestsPage() {
                     <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-secondary-accent transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                    <div className="mt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
+                    <p className="text-muted-foreground text-sm leading-relaxed flex-1">{item.description}</p>
+                    <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-secondary-accent transition-colors">
                       {item.cta}{' '}
                       {!item.comingSoon && (
                         <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
@@ -99,6 +99,7 @@ export default function InterestsPage() {
                 return (
                   <motion.div
                     key={i}
+                    className="h-full"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
@@ -110,7 +111,7 @@ export default function InterestsPage() {
                     whileHover={!item.comingSoon ? { y: -6 } : {}}
                   >
                     {item.comingSoon ? (
-                      <div className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl transition-colors cursor-default opacity-80">
+                      <div className="group flex flex-col h-full p-6 md:p-8 bg-muted/40 border border-border rounded-2xl transition-colors cursor-default opacity-80">
                         {inner}
                       </div>
                     ) : (
@@ -118,7 +119,7 @@ export default function InterestsPage() {
                         href={item.href}
                         target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="group p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors block"
+                        className="group flex flex-col h-full p-6 md:p-8 bg-muted/40 border border-border rounded-2xl hover:border-secondary-accent transition-colors"
                       >
                         {inner}
                       </a>
