@@ -61,7 +61,7 @@ export default function Home() {
     <>
       {/* ── Hero ──────────────────────────────────────── */}
       <main className="relative flex min-h-[62vh] flex-col items-center justify-center px-6 pt-40 pb-20 overflow-visible">
-        {/* Ambient glow — hero center */}
+        {/* Ambient glow: hero center */}
         <div
           aria-hidden="true"
           style={{

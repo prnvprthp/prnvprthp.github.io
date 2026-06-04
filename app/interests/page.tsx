@@ -20,7 +20,7 @@ const interestCategories = [
         title: "FlightSight",
         tag: "Travel · Flight Archive · Aviation",
         description:
-          "A beautifully designed archive of trips rendered as digital boarding passes, inspired by Flighty and App in the Air. Tracks stats and surfaces insights about the airlines, aircraft, and routes you've flown — a personal logbook that actually looks good.",
+          "A beautifully designed archive of trips rendered as digital boarding passes, inspired by Flighty and App in the Air. Tracks stats and surfaces insights about the airlines, aircraft, and routes you've flown. A personal logbook that actually looks good.",
         href: "http://flightsight-gamma.vercel.app",
         cta: "VISIT SITE",
         comingSoon: false,

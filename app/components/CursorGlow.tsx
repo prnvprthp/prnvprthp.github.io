@@ -12,7 +12,7 @@ export function CursorGlow() {
   const springY = useSpring(mouseY, { stiffness: 120, damping: 22, mass: 0.5 });
 
   useEffect(() => {
-    // Don't track on touch-only devices — no cursor exists
+    // Don't track on touch-only devices (no cursor exists)
     if (window.matchMedia("(hover: none)").matches) return;
 
     const SIZE = 260;
