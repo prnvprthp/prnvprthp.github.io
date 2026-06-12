@@ -8,8 +8,8 @@ export function CursorGlow() {
   const mouseY = useMotionValue(-400);
 
   // Spring gives a smooth, slightly-lagging follow
-  const springX = useSpring(mouseX, { stiffness: 120, damping: 22, mass: 0.5 });
-  const springY = useSpring(mouseY, { stiffness: 120, damping: 22, mass: 0.5 });
+  const springX = useSpring(mouseX, { stiffness: 500, damping: 32, mass: 0.15 });
+  const springY = useSpring(mouseY, { stiffness: 500, damping: 32, mass: 0.15 });
 
   useEffect(() => {
     // Don't track on touch-only devices (no cursor exists)

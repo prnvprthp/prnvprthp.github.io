@@ -5,6 +5,7 @@ import { NextPage } from '@/app/components/NextPage';
 
 type Education = {
   institution: string;
+  institutionHref?: string;
   location: string;
   degree: string;
   period: string;
@@ -16,6 +17,7 @@ type Education = {
 const education: Education[] = [
   {
     institution: "William & Mary",
+    institutionHref: "https://mason.wm.edu",
     location: "Williamsburg, VA",
     degree: "Master of Science, Business Analytics",
     period: "Aug 2025 to May 2026",
@@ -36,9 +38,10 @@ const education: Education[] = [
   },
   {
     institution: "SRM University",
+    institutionHref: "https://www.srmist.edu.in",
     location: "Chennai, India",
     degree: "Bachelor of Technology, Computer Science & Engineering",
-    period: "June 2018 to May 2022",
+    period: "Jun 2018 to May 2022",
     highlights: [
       "Minor in Big Data Analytics, chosen deliberately to bridge systems thinking with applied data work.",
       "Four years building the CS foundation: algorithms, data structures, systems, databases. The analytics track is where things clicked. I cared more about what the data meant than the infrastructure running it.",
@@ -120,7 +123,18 @@ export default function EducationPage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-accent font-semibold text-sm md:text-base mt-1">{edu.institution}</p>
+                  {edu.institutionHref ? (
+                    <a
+                      href={edu.institutionHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent font-semibold text-sm md:text-base mt-1 hover:opacity-70 transition-opacity inline-block"
+                    >
+                      {edu.institution}
+                    </a>
+                  ) : (
+                    <p className="text-accent font-semibold text-sm md:text-base mt-1">{edu.institution}</p>
+                  )}
                   <p className="text-muted-foreground text-xs mt-0.5">{edu.location}</p>
                 </div>
                 <span className="text-muted-foreground font-mono text-xs shrink-0 mt-1.5">{edu.period}</span>

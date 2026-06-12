@@ -5,6 +5,7 @@ import { NextPage } from '@/app/components/NextPage';
 
 type Experience = {
   company: string;
+  companyHref?: string;
   role: string;
   period: string;
   current?: boolean;
@@ -16,32 +17,35 @@ type Experience = {
 const experiences: Experience[] = [
   {
     company: "William & Mary",
+    companyHref: "https://mason.wm.edu",
     role: "Graduate Assistant",
     period: "Feb 2026 to May 2026",
     points: [
-      "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses, supporting 3 professors in curriculum delivery and technical student support.",
+      "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 11 courses, supporting curriculum delivery and technical student support.",
       "Automating print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
       "Boosting overall process efficiency and ensuring strict alignment with university IT guidelines and data security standards.",
     ],
-    stats: ["7 Courses", "3 Professors"],
+    stats: ["11 Courses"],
   },
   {
     company: "INSILLION",
+    companyHref: "https://insillion.com",
     role: "Product Marketing & Management",
-    period: "Jan 2023 to July 2025",
+    period: "Jan 2023 to Jul 2025",
     points: [
       "Built predictive fit/gap models assessing market risk, competition, and adoption trends to inform global expansion strategy and product-market fit.",
-      "Developed an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development.",
-      "Rebuilt pre-sales database & CRM workflows, significantly increasing data integrity and cutting retrieval time from ~10 days to under 2 minutes through process automation.",
-      "Aligned cross-functional teams and authored 5 Business Requirement Documents (BRDs), translating complex technical objectives into strategic executive insights.",
-      "Directed the first USA product launch, coordinating complex timelines, resources, and multi-level approvals to ensure a successful on-schedule rollout.",
+      "Helped develop an end-to-end Go-to-Market strategy for USA expansion, including customer acquisition planning, detailed market research, and strategic partnership development.",
+      "Rebuilt pre-sales database & CRM workflows, significantly increasing data integrity and cutting retrieval time from multiple days to under 2 minutes through process automation.",
+      "Aligned cross-functional teams, translating complex technical objectives into strategic executive insights.",
+      "Supported the direction of the first USA product launch, coordinating complex timelines, resources, and multi-level approvals to ensure a successful on-schedule rollout.",
       "Integrated LLM APIs and developed client-facing embedded web components for automated Intelligent Document Processing (IDP) and quote analysis, enhancing customer self-service capabilities.",
     ],
-    stats: ["5 BRDs", "1st USA Launch"],
+    stats: ["1st USA Launch"],
     badge: "100% Salary Appraisal",
   },
   {
     company: "Anheuser-Busch InBev",
+    companyHref: "https://www.anheuser-busch.com",
     role: "Research Analyst",
     period: "May 2021 to Jan 2022",
     points: [
@@ -98,7 +102,18 @@ export default function ExperiencePage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-accent font-semibold text-sm md:text-base mt-1">{exp.company}</p>
+                  {exp.companyHref ? (
+                    <a
+                      href={exp.companyHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent font-semibold text-sm md:text-base mt-1 hover:opacity-70 transition-opacity inline-block"
+                    >
+                      {exp.company}
+                    </a>
+                  ) : (
+                    <p className="text-accent font-semibold text-sm md:text-base mt-1">{exp.company}</p>
+                  )}
                 </div>
                 <span className="text-muted-foreground font-mono text-xs shrink-0 mt-1.5">{exp.period}</span>
               </div>
