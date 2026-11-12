@@ -16,16 +16,27 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    company: "INSILLION",
+    companyHref: "https://insillion.com",
+    role: "Product & Analytics SME",
+    period: "Jul 2026 to Present",
+    current: true,
+    points: [
+      "Building and supporting analytical models for client customer-retention programs, translating behavioral and transactional data into targeted retention recommendations.",
+      "Developing go-to-market strategy models that support client expansion decisions, sizing market opportunity and competitive risk to guide prioritization.",
+    ],
+  },
+  {
     company: "William & Mary",
     companyHref: "https://mason.wm.edu",
     role: "Graduate Assistant",
     period: "Feb 2026 to May 2026",
     points: [
-      "Serving as Statistics & Financial Management Teaching Assistant for UG business students across 11 courses, supporting curriculum delivery and technical student support.",
-      "Automating print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
-      "Boosting overall process efficiency and ensuring strict alignment with university IT guidelines and data security standards.",
+      "Served as Statistics & Financial Management Teaching Assistant for UG business students across 7 courses, supporting 3 professors with curriculum delivery and technical student support.",
+      "Automated print shop communications & marketing workflows, migrating legacy tools from Google Workspace to the Microsoft ecosystem to streamline administrative efficiency.",
+      "Boosted overall process efficiency and ensured strict alignment with university IT guidelines and data security standards.",
     ],
-    stats: ["11 Courses"],
+    stats: ["7 Courses", "3 Professors"],
   },
   {
     company: "INSILLION",
@@ -67,7 +78,7 @@ export default function ExperiencePage() {
         className="mb-16 md:mb-20"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Experience</h1>
-        <p className="text-muted-foreground text-base">3 years across product strategy, research, and analytics.</p>
+        <p className="text-muted-foreground text-base">Product strategy, research, and analytics across insurtech, CPG, and higher education.</p>
       </motion.div>
 
       {/* Timeline */}

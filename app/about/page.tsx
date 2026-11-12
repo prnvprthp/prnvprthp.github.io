@@ -1,14 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { NextPage } from "@/app/components/NextPage";
 
-const fadeUp = (delay = 0) => ({
+// Tuple, not number[]: framer-motion types `ease` as a 4-point cubic bezier.
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay },
+    transition: { duration: 0.55, ease: EASE, delay },
   },
 });
 
@@ -96,17 +99,26 @@ export default function AboutPage() {
             real and the timelines are fixed.
           </p>
           <p>
-            Right now, I'm completing my{" "}
+            In 2026 I finished my{" "}
             <span className="italic">
               M.S. in Business Analytics at William & Mary
             </span>{" "}
             on a{" "}
-            <span className="font-semibold text-foreground">40% merit scholarship</span>, while serving as a{" "}
+            <span className="font-semibold text-foreground">40% merit scholarship</span>, and spent my
+            final semester as a{" "}
             <span className="font-semibold text-foreground">Graduate Assistant</span> supporting three
-            professors across seven courses in Statistics and Financial Management. The coursework is
+            professors across seven courses in Statistics and Financial Management. The coursework was
             dense (stochastic modeling, deep learning, optimization), but honestly the most useful
-            thing has been teaching. Explaining complex concepts to undergrads forces you to actually
+            thing was the teaching. Explaining complex concepts to undergrads forces you to actually
             know what you're talking about.
+          </p>
+          <p>
+            I'm now back with{" "}
+            <span className="italic">INSILLION</span> as a{" "}
+            <span className="font-semibold text-foreground">Product & Analytics SME</span>, based in
+            Charlottesville. The work sits where I like it: building customer-retention models for
+            enterprise clients and the go-to-market models that tell them which markets are actually
+            worth entering.
           </p>
         </div>
       </motion.div>
