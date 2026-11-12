@@ -35,7 +35,7 @@
   --secondary-accent: #FBBF24;
 }
 
-/* 4. Global Styles — inside @layer base so Tailwind utilities can override them */
+/* 4. Global Styles: inside @layer base so Tailwind utilities can override them */
 @layer base {
   body {
     color: var(--foreground);

@@ -6,12 +6,12 @@ const PREVIEW_DIR = 'project-images';
 
 /**
  * Scanned at build time (static export). Drop preview images into
- * /public/project-images named "<slug>-<n>.<ext>" — e.g. marquee-1.png,
+ * /public/project-images named "<slug>-<n>.<ext>": e.g. marquee-1.png,
  * marquee-2.jpg, days-1.png. Files are grouped by <slug> and cycled in
  * ascending <n> order. Supported extensions: png, jpg, jpeg, webp.
  * The <slug> must match the `slug` of the app in InterestsClient.tsx.
- * (The analytics screenshots in this same folder use an underscore —
- * "<slug>_<n>.png" — so they don't match this dash pattern and are ignored.)
+ * (The analytics screenshots in this same folder use an underscore:
+ * "<slug>_<n>.png", so they don't match this dash pattern and are ignored.)
  */
 function getImagesBySlug(): Record<string, string[]> {
   const dir = path.join(process.cwd(), 'public', PREVIEW_DIR);
